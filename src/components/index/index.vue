@@ -87,6 +87,7 @@
         height: 100%;
         float: left;
         position: relative;
+        left: 190px;
     }
     #index .main img{
         display: block;

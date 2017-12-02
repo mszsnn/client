@@ -1,6 +1,5 @@
 <template>
-      <div id="side">
-          <div class="nav">
+      <div id="side" class="nav">
               <a href="" class="logo">
                   <img src="./logo.png" class="logoPic">
                   <img src="./project.png" class="project">
@@ -59,7 +58,6 @@
                   <input type="" name="" class="searchBox" placeholder="案例搜索">
                   <i class="iconfont icon-sousuo- searchBtn"></i>
               </div>
-          </div>
       </div>
 </template>
 <script>
@@ -90,37 +88,35 @@
     body,html{
         height:100%;
     }
+
     #side{
-        width: 100%;
-        height:100vh;
-        overflow: hidden;
-    }
-    #side .nav{
         width:190px;
         float: left;
         box-shadow: 3px 0 5px 3px rgba(0,0,0,0.1);
         padding-bottom: 117px;
         color:#878787;
-        position: relative;
+        position:fixed;
+        top:0;
+        left:0;
 
     }
-    #side .nav .logo{
+    #side.logo{
         display: block;
         width: 100%;
         height:56px;
         margin-top: 31px;
     }
-    #side .nav .logo img{
+    #side.logo img{
         display: block;
         float: left;
     }
-    #side .nav .logo .logoPic{
+    #side .logo .logoPic{
         margin-left: 30px;
     }
-    #side .nav .logo .project{
+    #side .logo .project{
         margin-left: 2px;
     }
-    #side .nav ul{
+    #side ul{
         width:100%;
         height:500px;
         display: flex;
@@ -128,12 +124,12 @@
         align-content: space-between;
 
     }
-    #side .nav ul .navList{
+    #side ul .navList{
         width:100%;
         position: relative;
 
     }
-    #side .nav ul .navList .list{
+    #side ul .navList .list{
         width:182px;
         height: 100vh;
         position:absolute;
@@ -144,7 +140,7 @@
         opacity: 0;
     }
 
-    #side .nav ul .navList .list div{
+    #side ul .navList .list div{
         width:100%;
         height: 109px;
         border-bottom:2px solid #505050;
@@ -152,11 +148,11 @@
         color:#7b7b7b;
         text-align: center;
     }
-    #side .nav ul .navList .list div.active{
+    #side ul .navList .list div.active{
         background: #01a5e2;
         color:#fff;
     }
-    #side .nav ul .navList a{
+    #side ul .navList a{
         display: block;
         height: 100%;
         font-size: 16px;
@@ -164,20 +160,20 @@
         color:#7d7d7d;
         text-align: center;
     }
-    #side .nav ul .navList a span:nth-of-type(1){
+    #side ul .navList a span:nth-of-type(1){
         width: 100%;
         display: block;
         margin-top: 9px;
     }
-    #side .nav ul .navList a span:nth-of-type(2){
+    #side ul .navList a span:nth-of-type(2){
         font-size: 12px;
     }
-    #side .nav ul .navList a.active{
+    #side ul .navList a.active{
         border-bottom:1px solid #eee;
         border-top:1px solid #eee;
         color:#01a5e2;
     }
-    #side .nav ul .navList a.active::after{
+    #side ul .navList a.active::after{
         content: "";
         display: block;
         width: 7px;
@@ -189,13 +185,13 @@
         top:0;
 
     }
-    #side .nav .search{
+    #side .search{
         width:100%;
         height:24px;
         margin-top: 40px;
         position: relative;
     }
-    #side .nav .searchBox{
+    #side .searchBox{
         width: 130px;
         height: 12px;
         border:1px solid #f3f3f3;
@@ -205,7 +201,7 @@
         text-align: left;
         padding:6px 13px;
     }
-    #side .nav .searchBtn{
+    #side .searchBtn{
         position: absolute;
         right:26px;
         top:5px;
