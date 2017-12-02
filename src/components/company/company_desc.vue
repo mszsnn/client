@@ -1,6 +1,6 @@
 <template>
       <div id="company_desc">
-
+               asdas
       </div>
 </template>
 <script>
