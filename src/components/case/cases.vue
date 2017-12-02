@@ -1,7 +1,9 @@
 <template>
-     <div id="case">
-        <router-view></router-view>
-     </div>
+    <div id="case">
+        <router-view>
+
+        </router-view>
+    </div>
 </template>
 
 <script>
