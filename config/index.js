@@ -12,7 +12,11 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-    	"/api":"http://uekproject.duapp.com/"
+    	"/api":
+        {
+          target:"http://uekproject.duapp.com" ,
+          changeOrigin: true
+        }
     },
 
     // Various Dev Server settings

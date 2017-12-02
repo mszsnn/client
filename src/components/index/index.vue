@@ -15,7 +15,7 @@
 
       },
       mounted(){
-
+          fetch('/api/test').then(r=>r.json()).then(d=>console.log(d));
       }
     }
 </script>
