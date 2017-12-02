@@ -12,9 +12,11 @@
           <div class="list">
             <div class="left"></div>
             <div class="right">
-              <div class="title">优逸客优逸客优逸客优逸客优逸客</div>
-              <div class="eng">aksdf asdkfj asdkfas dfaskdfasd</div>
-              <div class="des">材大部分是板材，用开料锯锯截直线型的板材，小型企业则用圆锯锯截带锯锯切曲线型板材沙发框架,用材可采用中密中密度纤维用开料锯锯截直线型的板材,小型企业则用圆锯锯截.</div>
+               <div>
+                 <div class="title">优逸客优逸客优逸客优逸客优逸客</div>
+                 <div class="eng">aksdf asdkfj asdkfas dfaskdfasd</div>
+               </div>
+              <div class="des">锯截直线型的板材，小型企业则用圆锯锯截带锯锯切曲线型板材沙发框架,用材可采用中密中密度纤维用开料锯锯截直线型的板材,小型企业则用圆锯锯截.</div>
             </div>
           </div>
         </swiper-slide>
@@ -117,9 +119,12 @@
           background: #ccc;
         }
         .right {
-          flex: auto;
+          width:560px;
           padding:0 40px;
           box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
           .title{
             font-size: 18px;
             color: #74cffa;
@@ -131,6 +136,7 @@
           .des{
             font-size: 12px;
             color: #adacac;
+            overflow:hidden;
           }
         }
       }
