@@ -15,10 +15,17 @@
 
       },
       mounted(){
-          fetch('/api/test').then(r=>r.json()).then(d=>console.log(d));
+           this.$http.get('/api/test').then((val)=>{
+             console.log(val);
+           })
       }
     }
 </script>
 <style lang="scss" scoped="">
+      $width:200px;
+      #index{
+        width: $width;
+        height:200px;
+      }
 
 </style>
