@@ -1,6 +1,6 @@
 <template>
       <div id="case_list">
-
+            asdas
       </div>
 </template>
 <script>
