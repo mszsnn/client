@@ -56,13 +56,14 @@
         data(){
              return {
                 swiperOption: {
-                    slidesPerView: 3
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                    freeMode: true,
                 }
             }
         },
         methods: {},
         mounted(){
-
         },
         components: {
             side,
@@ -146,5 +147,6 @@
     .case_container .case_eng {
         font-size: 16px;
         text-align: center;
+
     }
 </style>
