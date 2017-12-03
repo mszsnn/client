@@ -1,13 +1,13 @@
 <template>
       <div id="team">
             <side></side>
-            <div class="team-container">
+            <div class="team-container" ref="teamContainer">
                   <div class="title"></div>
                   <div class="add">+</div>
                   <div class="team-main">
                         <swiper :options="swiperOption">
                               <swiper-slide>
-                                    <div v-on="open" class="team-session">
+                                    <div v-on:click="open" class="team-session">
                                           <div class="imgBox">
                                                 <img src="./岳英俊.png" alt="" width="400">
                                           </div>
@@ -18,7 +18,7 @@
                                     </div>
                               </swiper-slide>
                               <swiper-slide>
-                                    <div v-on="open" class="team-session">
+                                    <div v-on:click="open" class="team-session">
                                           <div class="imgBox">
                                                 <img src="./刘钊.png" alt="" width="400">
                                           </div>
@@ -29,7 +29,7 @@
                                     </div>
                               </swiper-slide>
                               <swiper-slide>
-                                    <div class="team-session">
+                                    <div v-on:click="open" class="team-session">
                                           <div class="imgBox">
                                                 <img src="./马彦龙.png" alt="" width="400">
                                           </div>
@@ -40,7 +40,7 @@
                                     </div>
                               </swiper-slide>
                               <swiper-slide>
-                                    <div class="team-session">
+                                    <div v-on:click="open" class="team-session">
                                           <div class="imgBox">
                                                 <img src="./岳英俊.png" alt="" width="400">
                                           </div>
@@ -51,7 +51,7 @@
                                     </div>
                               </swiper-slide>
                               <swiper-slide>
-                                    <div class="team-session">
+                                    <div v-on:click="open" class="team-session">
                                           <div class="imgBox">
                                                 <img src="./刘钊.png" alt="" width="400">
                                           </div>
@@ -62,7 +62,7 @@
                                     </div>
                               </swiper-slide>
                               <swiper-slide>
-                                    <div class="team-session">
+                                    <div v-on:click="open" class="team-session">
                                           <div class="imgBox">
                                                 <img src="./马彦龙.png" alt="" width="400">
                                           </div>
@@ -76,7 +76,7 @@
                         </swiper>
                   </div>
             </div>
-            <div id="team-person">
+            <div id="team-person" ref="teamPerson">
                   <div class="left">
                         <img src="./刘钊.png" alt="" width="388">
                   </div>
@@ -92,11 +92,12 @@
                               <p>末那工作室是中國大陸地區第壹家以原創高端GK模型及雕像開發生產的專業工作室。末那工作室,組建於2010年，成立初期主要從事原創</p>
                         </div>
                   </div>
-                  <div class="close">×</div>
+                  <div class="close" v-on:click="close" ref="teamClose">×</div>
             </div>
       </div>
 </template>
 <script>
+
       import side from "../public/side.vue"
       import {swiper, swiperSlide} from 'vue-awesome-swiper'
       import 'swiper/dist/css/swiper.css'
@@ -114,8 +115,13 @@
               }
           },
           methods:{
-              open(){
-                  alert(1);
+              open:function(){
+                  this.$refs.teamContainer.style.display = "none";
+                  this.$refs.teamPerson.style.display = "block";
+              },
+              close:function(){
+                  this.$refs.teamPerson.style.display = "none";
+                  this.$refs.teamContainer.style.display = "block";
               }
           },
           mounted(){
