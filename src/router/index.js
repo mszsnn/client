@@ -60,16 +60,15 @@ export default new Router({
       "redirect": {name: 'news_list'},
       "children": [
         {
-          "name": "news_detail",
-          "path": "news_detail",
-          "component": news_detail
-        },
-        {
           "name": "news_list",
           "path": "news_list",
           "component": news_list
         },
-
+        {
+          "name": "news_detail",
+          "path": "news_detail",
+          "component": news_detail
+        }
       ]
     },
     {
