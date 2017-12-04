@@ -1,7 +1,7 @@
 <template>
       <div id="index">
          <div class="main">
-              <img src="./homebg_03.png">
+              <img src="./homebg_03.png" class="bgpicture">
               <div class="news">
                   <div class="plus">
                       <i class="iconfont icon-iconjia"></i>
@@ -85,7 +85,7 @@
         width:100%;
         height: 100%;
     }
-    #index .main img{
+    #index .main .bgpicture{
         display: block;
         width:100%;
         height:100%;
@@ -133,6 +133,7 @@
         display: block;
         float: left;
 
+
     }
     #index .main .mask .design .text{
         display: block;
@@ -160,7 +161,7 @@
         left:-7px;
         color:#01a5e2;
         text-align: center;
-        line-height: 19px;
+        line-height: 13px;
         z-index: 2;
     }
     #index .main .news .plus i{
@@ -214,7 +215,7 @@
     }
     #index .main .caseBox img{
         display: block;
-        margin:11px;
+        margin:14px;
     }
     #index .main .caseLeft,#index .main .caseRight{
         width: 14px;
