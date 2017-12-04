@@ -104,7 +104,7 @@
               return {
                   swiperOption: {
                       slidesPerView: 3,
-                      spaceBetween : 20,
+//                      spaceBetween : 20,
 //                      freeMode: true,
                       centeredSlides : true,
                       initialSlide: 1,
@@ -164,6 +164,7 @@
         height:550px;
         margin-top:30px;
     }
+
     .team-session{
         width:400px;
         height:550px;
@@ -171,6 +172,7 @@
         transform:scale(0.9);
         transition:all .5s;
         overflow: hidden;
+        margin:0 auto;
     }
     .team-session .name{
         display:none;
@@ -229,8 +231,7 @@
     #team-person{
         width:1040px;
         height:auto;
-        margin-top:43px;
-        margin-left:43px;
+        margin:50px auto 0;
         background-color: #fff;
         z-index: 99;
         display: none;
