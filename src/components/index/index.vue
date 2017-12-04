@@ -82,17 +82,18 @@
     body,html{
         height:100%;
     }
+    #index{
+        width:100%;
+        height: 100%;
+    }
     #index .main{
         width:calc(100% - 190px);
         height: 100%;
-        float: left;
-        position: relative;
-        left: 190px;
     }
     #index .main img{
         display: block;
-       /* width：100%;*/
-        /*height:100%;*/
+        width:100%;
+        height:100%;
     }
     #index .main .mask{
         width:910px;
