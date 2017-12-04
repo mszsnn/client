@@ -13,7 +13,7 @@
                             <div class="case_imgbox">
                                 <img src="./case_items.png" alt="">
                             </div>
-                            <div class="case_add1"></div>
+                            <div class="case_add1"><span>|</span><span>|</span></div>
                             <div class="case_num">01</div>
                             <div class="case_name">山大君宇网</div>
                             <div class="case_eng">shandajunyuwang</div>
@@ -78,7 +78,7 @@
                 swiperOption: {
                     slidesPerView : 3,
                     spaceBetween : 20,
-                    autoPlay:3000,
+                    autoPlay:1000,
                     loop:true
                 }
             }
@@ -94,13 +94,16 @@
     }
 </script>
 <style scoped="">
+    #case{
+        width: auto;
+        height: 100%;
+    }
     .case_container {
         width: auto;
         height: 100%;
     }
 
     .case_container header {
-        float: left;
         width: 100%;
     }
 
@@ -147,11 +150,31 @@
     .case_container .case_add1 {
         height: 16px;
         width: 16px;
-        background: url("./case_add.png");
         margin: 0 auto;
         margin-top: 55px;
+        position: relative;
     }
-
+    .case_container .case_add1 span:first-child{
+        position: absolute;
+        width:7px;
+        height:16px;
+        left:0;
+        top:0;
+        color:blue;
+        text-align: center;
+        line-height: 16px;
+    }
+    .case_container .case_add1 span:last-child{
+        position: absolute;
+        width:8px;
+        height:16px;
+        left:0;
+        top:0;
+        transform:rotate(90deg);
+        color:red;
+        text-align: center;
+        line-height: 16px;
+    }
     .case_container .case_num {
         font-size: 32px;
         text-align: center;
