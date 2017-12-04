@@ -111,6 +111,7 @@
                   height:313px;
                   float:right;
                   color:#333;
+                  font-family: "Microsoft YaHei UI";
                   .title{
                         width:100%;
                         height:auto;
@@ -121,14 +122,18 @@
                               width:30px;
                               height:35px;
                               background-color:green;
+                              margin-right:10px;
                         }
                         h4{
                               font-weight: 400;
                               font-size:12px;
+                              color:#848484;
                         }
                         h5{
                               font-weight:400;
-                              font-size:16px;
+                              font-size:14px;
+                              font-weight: 600;
+                              color:#585858;
                         }
                   }
                   .address{

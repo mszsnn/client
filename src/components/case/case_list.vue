@@ -130,9 +130,8 @@
     .case_container .case_session {
         width: 282px;
         height: 458px;
-        float: left;
         background: #fff;
-        margin: 0 18px;
+        margin: 0 auto;
         margin-top: 31px;
         border: 1px solid #e4e5e5;
         position: relative;
@@ -144,6 +143,7 @@
         border: 1px solid #e4e5e5;
         margin: 0 auto;
         margin-top: 5px;
+        filter: blur(2px);
     }
 
     .case_container .case_bottom {
@@ -193,6 +193,9 @@
     .case_session:hover span:nth-child(2) {
         top: -1000px;
         opacity: 0;
+    }
+    .case_session:hover .case_imgbox{
+        filter:none;
     }
     .case_container .case_add1 span:last-child {
         position: absolute;

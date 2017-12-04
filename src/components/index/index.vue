@@ -1,7 +1,6 @@
 <template>
       <div id="index">
-          <side></side>
-          <div class="main">
+         <div class="main">
               <img src="./homebg_03.png">
               <div class="news">
                   <div class="plus">
@@ -48,16 +47,12 @@
       </div>
 </template>
 <script>
-    import side from '../public/side.vue';
     export default {
       name:'index',
       data(){
         return {
             data:'abc'
         }
-      },
-      components:{
-         side
       },
       methods:{
 
@@ -87,7 +82,7 @@
         height: 100%;
     }
     #index .main{
-        width:calc(100% - 190px);
+        width:100%;
         height: 100%;
     }
     #index .main img{
