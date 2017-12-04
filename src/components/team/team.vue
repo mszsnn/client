@@ -132,6 +132,10 @@
 
 </script>
 <style lang="" scoped="">
+    #team{
+        width:100%;
+        height:100%;
+    }
     .team-container{
         width:auto;
         min-height: 100%;
