@@ -137,7 +137,7 @@
         height:100%;
     }
     .team-container{
-        width:auto;
+        width:100%;
         min-height: 100%;
         position:relative;
         top:0;
