@@ -130,9 +130,8 @@
     .case_container .case_session {
         width: 282px;
         height: 458px;
-        float: left;
         background: #fff;
-        margin: 0 18px;
+        margin: 0 auto;
         margin-top: 31px;
         border: 1px solid #e4e5e5;
         position: relative;
