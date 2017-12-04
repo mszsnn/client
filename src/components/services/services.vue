@@ -1,6 +1,5 @@
 <template>
       <div id="services">
-        <side></side>
         <div class="services_content">
           <!-- 标题 -->
           <a href="" class="services_title"></a>
@@ -79,6 +78,10 @@
     }
 </script>
 <style lang="scss" scoped="">
+  #services{
+    width:100%;
+    height:100%;
+  }
   #services .services_content{
     width: 595px;
     margin: 0 auto;

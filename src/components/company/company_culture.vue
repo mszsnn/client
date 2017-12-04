@@ -54,7 +54,10 @@
     }
 </script>
 <style lang="scss" scoped="">
-
+#company_culture{
+  width:100%;
+  height:100%;
+}
 #company_culture .companyCult_content{
   width: 578px;
   margin: 0 auto;

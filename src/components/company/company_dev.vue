@@ -29,6 +29,10 @@
     }
 </script>
 <style lang="scss" scoped="">
+#company_dev{
+  width:100%;
+  height:100%;
+}
   #company_dev .companyDev_content{
     width: 578px;
     margin: 0 auto;
