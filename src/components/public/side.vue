@@ -25,32 +25,32 @@
       </li>
       <li class="navList">
         <a href="#/news">
-          <span>公司新闻</span>
+          <span>新闻动态</span>
           <span>NEWS</span>
         </a>
       </li>
       <li class="navList">
         <a href="#/services">
-          <span>公司服务</span>
-          <span>HOME</span>
+          <span>服务项目</span>
+          <span>SEIVICES</span>
         </a>
       </li>
       <li class="navList">
         <a href="#/case">
           <span>案例展示</span>
-          <span>HOME</span>
+          <span>CASES</span>
         </a>
       </li>
       <li class="navList">
         <a href="#/team">
           <span>团队介绍</span>
-          <span>HOME</span>
+          <span>TEAM</span>
         </a>
       </li>
       <li class="navList">
         <a href="#/contact">
           <span>联系我们</span>
-          <span>HOME</span>
+          <span>CONTACT US</span>
         </a>
       </li>
     </ul>

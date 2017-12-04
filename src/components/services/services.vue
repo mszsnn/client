@@ -1,5 +1,6 @@
 <template>
       <div id="services">
+        <side></side>
         <div class="services_content">
           <!-- 标题 -->
           <a href="" class="services_title"></a>
@@ -58,12 +59,16 @@
       </div>
 </template>
 <script>
+    import side from "../public/side.vue"
     export default {
       name:'services',
       data(){
         return {
 
         }
+      },
+      components:{
+        side
       },
       methods:{
 

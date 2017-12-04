@@ -38,6 +38,9 @@
 
         }
       },
+      components:{
+        side
+      },
       methods:{
 
       },
@@ -48,11 +51,9 @@
 </script>
 <style scoped="">
    .news_detail_container{
-      width:calc(100% - 190px);
       height: 100%;
-      float: left;
+      margin:0 auto;
       position: relative;
-      left: 190px;
     }
     .news_detail_container main{
       width: 930px;

@@ -1,24 +1,25 @@
 <template>
   <div id="news_list">
+    <side></side>
     <div class="top">
       <h1>about unique</h1>
       <h2>新闻中心</h2>
-      <h6>aosena asdf  sadf  a sdf  as df a s</h6>
+      <h6>Art is a language that loves life</h6>
       <h1>+</h1>
     </div>
     <div class="wheel">
       <swiper :options="swiperOption">
         <swiper-slide>
-          <div class="list">
+          <router-link class="list" :to="{name:'news_detail'}">
             <div class="left"></div>
             <div class="right">
                <div>
-                 <div class="title">优逸客优逸客优逸客优逸客优逸客</div>
-                 <div class="eng">aksdf asdkfj asdkfas dfaskdfasd</div>
+                 <div class="title">优逸客参加上海IXDC国际交流大会</div>
+                 <div class="eng">Art is a language that loves life</div>
                </div>
               <div class="des">锯截直线型的板材，小型企业则用圆锯锯截带锯锯切曲线型板材沙发框架,用材可采用中密中密度纤维用开料锯锯截直线型的板材,小型企业则用圆锯锯截.</div>
             </div>
-          </div>
+          </router-link>
         </swiper-slide>
         <swiper-slide>
           <div class="list">
@@ -39,7 +40,7 @@
 <script>
   import 'swiper/dist/css/swiper.css'
   import {swiper, swiperSlide} from 'vue-awesome-swiper'
-
+  import side from "../public/side.vue";
   export default {
     name: 'news_list',
     data() {
@@ -57,7 +58,8 @@
     methods: {},
     components: {
       swiper,
-      swiperSlide
+      swiperSlide,
+      side,
     },
     mounted() {
 
@@ -79,16 +81,22 @@
       h1 {
         font-size: 40px;
         color: #545454;
+        font-family: cg;
+        font-weight: bold;
+        font-style: italic;
       }
       h2 {
         font-size: 24px;
-        color: #949494;
+        color: #000;
         font-weight: normal;
+        font-family: pf;
+        letter-spacing: 3px;
       }
       h6 {
         font-size: 10px;
         color: #949494;
         font-weight: normal;
+        font-family: cg;
       }
       h1:last-child {
         color: #f0f0f0;
@@ -113,6 +121,7 @@
         padding: 30px 0;
         margin: 0 auto;
         display: flex;
+        text-decoration: none;
         .left {
           width: 150px;
           height: 100%;
@@ -128,6 +137,8 @@
           .title{
             font-size: 18px;
             color: #74cffa;
+            font-weight: 400;
+            letter-spacing: 1px;
           }
           .eng{
             font-size: 10px;
