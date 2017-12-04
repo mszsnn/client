@@ -1,7 +1,12 @@
 <template>
   <div id="app">
-    <side></side>  
-    <router-view/>
+    <side></side>
+    <div class='ms_con'>
+      <transition name='move'>
+        <router-view/>
+      </transition>  
+    </div>  
+   
   </div>
 </template>
 
@@ -25,7 +30,7 @@ export default {
   #app{
     padding-left:190px;
     width:100%;
-    height:100%;
+    height:100vh;
     position: relative;
     overflow: hidden;
     box-sizing: border-box;
@@ -37,5 +42,27 @@ export default {
   @font-face {
     font-family: 'pf';
     src: url('./assets/PingFang Light.ttf');
+  }
+
+  .move-enter-active, .move-leave-active {
+    transition: transform .5s,filter .5s;
+  }
+  .move-enter /* .fade-leave-active in below version 2.1.8 */ {
+    transform:translateY(100%);
+    filter:blur(10px);
+  }
+  .move-leave-to{
+    transform:translateY(-100%);
+    filter:blur(10px);
+  }
+  .ms_con{
+    width:100%;
+    height:100%;
+    position:relative;
+  }
+  .ms_con > div[id]{
+      position:absolute;
+      left:0;
+      top:0;
   }
 </style>
