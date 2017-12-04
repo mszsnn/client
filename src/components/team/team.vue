@@ -1,6 +1,5 @@
 <template>
       <div id="team">
-            <side></side>
             <div class="team-container" ref="teamContainer">
                   <div class="title"></div>
                   <div class="add">+</div>
@@ -97,8 +96,6 @@
       </div>
 </template>
 <script>
-
-      import side from "../public/side.vue"
       import {swiper, swiperSlide} from 'vue-awesome-swiper'
       import 'swiper/dist/css/swiper.css'
       export default {
@@ -128,7 +125,6 @@
 
           },
           components: {
-              side,
               swiper,
               swiperSlide
           },
