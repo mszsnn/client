@@ -1,5 +1,5 @@
 <template>
-    <div id="case">
+    <div id="casebox">
         <router-view>
 
         </router-view>
@@ -11,6 +11,9 @@
 </script>
 
 <style scoped lang='scss'>
-
+  #casebox{
+      width:100%;
+      height:100%;
+  }
 </style>
 
