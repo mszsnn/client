@@ -13,10 +13,12 @@
                             <div class="case_imgbox">
                                 <img src="./case_items.png" alt="">
                             </div>
-                            <div class="case_add1"><span>|</span><span>|</span></div>
-                            <div class="case_num">01</div>
-                            <div class="case_name">山大君宇网</div>
-                            <div class="case_eng">shandajunyuwang</div>
+                            <div class="case_bottom">
+                                <div class="case_add1"><span>|</span><span>|</span><span>|</span></div>
+                                <div class="case_num">01</div>
+                                <div class="case_name">山大君宇网</div>
+                                <div class="case_eng">shandajunyuwang</div>
+                            </div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
@@ -24,10 +26,12 @@
                             <div class="case_imgbox">
                                 <img src="./case_items.png" alt="">
                             </div>
-                            <div class="case_add1"></div>
-                            <div class="case_num">02</div>
-                            <div class="case_name">山大君宇网</div>
-                            <div class="case_eng">shandajunyuwang</div>
+                            <div class="case_bottom">
+                                <div class="case_add1"><span>|</span><span>|</span><span>|</span></div>
+                                <div class="case_num">01</div>
+                                <div class="case_name">山大君宇网</div>
+                                <div class="case_eng">shandajunyuwang</div>
+                            </div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
@@ -35,10 +39,12 @@
                             <div class="case_imgbox">
                                 <img src="./case_items.png" alt="">
                             </div>
-                            <div class="case_add1"></div>
-                            <div class="case_num">03</div>
-                            <div class="case_name">山大君宇网</div>
-                            <div class="case_eng">shandajunyuwang</div>
+                            <div class="case_bottom">
+                                <div class="case_add1"><span>|</span><span>|</span><span>|</span></div>
+                                <div class="case_num">01</div>
+                                <div class="case_name">山大君宇网</div>
+                                <div class="case_eng">shandajunyuwang</div>
+                            </div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
@@ -46,21 +52,12 @@
                             <div class="case_imgbox">
                                 <img src="./case_items.png" alt="">
                             </div>
-                            <div class="case_add1"></div>
-                            <div class="case_num">03</div>
-                            <div class="case_name">山大君宇网</div>
-                            <div class="case_eng">shandajunyuwang</div>
-                        </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <div class="case_session">
-                            <div class="case_imgbox">
-                                <img src="./case_items.png" alt="">
+                            <div class="case_bottom">
+                                <div class="case_add1"><span>|</span><span>|</span><span>|</span></div>
+                                <div class="case_num">01</div>
+                                <div class="case_name">山大君宇网</div>
+                                <div class="case_eng">shandajunyuwang</div>
                             </div>
-                            <div class="case_add1"></div>
-                            <div class="case_num">03</div>
-                            <div class="case_name">山大君宇网</div>
-                            <div class="case_eng">shandajunyuwang</div>
                         </div>
                     </swiper-slide>
                 </swiper>
@@ -74,12 +71,12 @@
     export default {
         name: 'team',
         data(){
-             return {
+            return {
                 swiperOption: {
-                    slidesPerView : 3,
-                    spaceBetween : 20,
-                    autoPlay:1000,
-                    loop:true
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                    autoPlay: 1000,
+                    loop: true
                 }
             }
         },
@@ -94,10 +91,11 @@
     }
 </script>
 <style scoped="">
-    #case{
-        width: auto;
+    #case {
+        width: 100%;
         height: 100%;
     }
+
     .case_container {
         width: auto;
         height: 100%;
@@ -137,6 +135,7 @@
         margin: 0 18px;
         margin-top: 31px;
         border: 1px solid #e4e5e5;
+        position: relative;
     }
 
     .case_container .case_imgbox {
@@ -147,6 +146,15 @@
         margin-top: 5px;
     }
 
+    .case_container .case_bottom {
+        width: 282px;
+        height: 212px;
+        transition: height .5s ease-in;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
     .case_container .case_add1 {
         height: 16px;
         width: 16px;
@@ -154,27 +162,63 @@
         margin-top: 55px;
         position: relative;
     }
-    .case_container .case_add1 span:first-child{
+
+    .case_container .case_add1 span:first-child {
         position: absolute;
-        width:7px;
-        height:16px;
-        left:0;
-        top:0;
-        color:blue;
+        width: 7px;
+        height: 16px;
+        left: 0;
+        top: 1000px;
+        color: #fff;
         text-align: center;
         line-height: 16px;
+        transition: all .5s cubic-bezier(1, 0, 0, 1);
+        opacity: 0;
     }
-    .case_container .case_add1 span:last-child{
+    .case_container .case_add1 span:nth-child(2){
         position: absolute;
-        width:8px;
-        height:16px;
-        left:0;
+        width: 7px;
+        height: 16px;
+        left: 0;
         top:0;
-        transform:rotate(90deg);
-        color:red;
+        color: #ccc;
         text-align: center;
         line-height: 16px;
+        transition: all .5s cubic-bezier(1, 0, 0, 1);
     }
+    .case_session:hover span:first-child {
+        top: 0;
+        opacity: 1;
+    }
+    .case_session:hover span:nth-child(2) {
+        top: -1000px;
+        opacity: 0;
+    }
+    .case_container .case_add1 span:last-child {
+        position: absolute;
+        width: 8px;
+        height: 16px;
+        left: -1000px;
+        top: 0;
+        transform: rotate(90deg);
+        color:#fff;
+        text-align: center;
+        line-height: 16px;
+        transition: all .5s cubic-bezier(1, 0, 0, 1);
+        opacity: 0;
+    }
+
+    .case_session:hover span:last-child {
+        left: 0;
+        opacity: 1;
+    }
+
+    .case_session:hover .case_bottom {
+        height: 300px;
+        background:orange;
+        color:#fff;
+    }
+
     .case_container .case_num {
         font-size: 32px;
         text-align: center;
