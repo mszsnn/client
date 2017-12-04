@@ -9,7 +9,7 @@
             <div class="case_main">
                 <swiper :options="swiperOption">
                     <swiper-slide>
-                        <div class="case_session">
+                        <router-link class="case_session" :to="{name:'case_detail'}">
                             <div class="case_imgbox">
                                 <img src="./case_items.png" alt="">
                             </div>
@@ -17,7 +17,7 @@
                             <div class="case_num">01</div>
                             <div class="case_name">山大君宇网</div>
                             <div class="case_eng">shandajunyuwang</div>
-                        </div>
+                        </router-link>
                     </swiper-slide>
                     <swiper-slide>
                         <div class="case_session">
