@@ -1,6 +1,5 @@
 <template>
     <div id="case">
-        <side></side>
         <div class="case_container">
             <header>
                 <div class="case_title">
@@ -42,13 +41,34 @@
                             <div class="case_eng">shandajunyuwang</div>
                         </div>
                     </swiper-slide>
+                    <swiper-slide>
+                        <div class="case_session">
+                            <div class="case_imgbox">
+                                <img src="./case_items.png" alt="">
+                            </div>
+                            <div class="case_add1"></div>
+                            <div class="case_num">03</div>
+                            <div class="case_name">山大君宇网</div>
+                            <div class="case_eng">shandajunyuwang</div>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="case_session">
+                            <div class="case_imgbox">
+                                <img src="./case_items.png" alt="">
+                            </div>
+                            <div class="case_add1"></div>
+                            <div class="case_num">03</div>
+                            <div class="case_name">山大君宇网</div>
+                            <div class="case_eng">shandajunyuwang</div>
+                        </div>
+                    </swiper-slide>
                 </swiper>
             </div>
         </div>
     </div>
 </template>
 <script>
-    import side from "../public/side.vue";
     import {swiper, swiperSlide} from 'vue-awesome-swiper';
     import 'swiper/dist/css/swiper.css';
     export default {
@@ -56,9 +76,10 @@
         data(){
              return {
                 swiperOption: {
-                    slidesPerView: 3,
-                    spaceBetween: 30,
-                    freeMode: true,
+                    slidesPerView : 3,
+                    spaceBetween : 20,
+                    autoPlay:3000,
+                    loop:true
                 }
             }
         },
@@ -66,7 +87,6 @@
         mounted(){
         },
         components: {
-            side,
             swiper,
             swiperSlide
         },
@@ -77,7 +97,6 @@
     .case_container {
         width: auto;
         height: 100%;
-        margin-left: 194px;
     }
 
     .case_container header {
