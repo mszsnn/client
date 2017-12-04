@@ -45,6 +45,10 @@
     }
 </script>
 <style lang="scss" scoped="">
+#company_desc{
+  width:100%;
+  height:100%;
+}
 #company_desc .companyIntro_content{
   width: 538px;
   margin: 0 auto;

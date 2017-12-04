@@ -1,6 +1,5 @@
 <template>
   <div id="news_list">
-    <side></side>
     <div class="top">
       <h1>about unique</h1>
       <h2>新闻中心</h2>
@@ -40,7 +39,6 @@
 <script>
   import 'swiper/dist/css/swiper.css'
   import {swiper, swiperSlide} from 'vue-awesome-swiper'
-  import side from "../public/side.vue";
   export default {
     name: 'news_list',
     data() {
@@ -59,7 +57,6 @@
     components: {
       swiper,
       swiperSlide,
-      side,
     },
     mounted() {
 

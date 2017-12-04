@@ -1,6 +1,5 @@
 <template>
       <div id="news_detail">
-          <side></side>
           <div class="news_detail_container">
               <main>
                   <header>
@@ -38,9 +37,6 @@
 
         }
       },
-      components:{
-        side
-      },
       methods:{
 
       },
@@ -50,6 +46,10 @@
     }
 </script>
 <style scoped="">
+  #news_detail{
+    width: 100%;
+    height: 100%;
+  }
    .news_detail_container{
       height: 100%;
       margin:0 auto;

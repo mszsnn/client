@@ -9,6 +9,9 @@
 </script>
 
 <style scoped lang='scss'>
-
+    #company{
+      width:100%;
+      height:100%;
+    }
 </style>
 
