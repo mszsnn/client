@@ -1,13 +1,17 @@
 <template>
   <div id="app">
-
+    <side></side>  
     <router-view/>
   </div>
 </template>
 
 <script>
+import side from './components/public/side.vue'
 export default {
-  name: 'app'
+  name: 'app',
+  components:{
+    side
+  }
 }
 </script>
 
