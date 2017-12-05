@@ -37,10 +37,10 @@
         currentchilren:0,
         category:[
           {id:0,title:'首页',eng:'Home',route:"#/index",children:[]},
-          {id:1,title:'公司简介',eng:'Home',route:"#/company",children:[
+          {id:1,title:'公司简介',eng:'Home',route:"#/company/company_desc",children:[
             {id:7,title:'公司介绍',route:'#/company/company_desc'},
-            {id:8,title:'发展历程',route:'#/company/company_culture'},
-            {id:9,title:'企业文化',route:'#/company/company_dev'},
+            {id:8,title:'发展历程',route:'#/company/company_dev'},
+            {id:9,title:'企业文化',route:'#/company/company_culture'},
           ]},
           {id:2,title:'新闻动态',eng:'NEWS',route:"#/news",children:[]},
           {id:3,title:'服务项目',eng:'SEIVICES',route:"#/services",children:[]},
@@ -55,9 +55,16 @@
     methods: {
       c(item){
           this.current=item.id;
-          this.children=item.children
+          this.children=item.children;
+         
       }
     },
+    watch:{
+      currentchilren(){
+          this.category[1].route=this.children[this.currentchilren].route;
+      }
+    }
+   
   }
 </script>
 <style lang="scss" scoped="">
