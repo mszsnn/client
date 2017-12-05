@@ -1,63 +1,30 @@
 <template>
   <div id="side" class="nav">
-    <a href="" class="logo">
-      <img src="./logo.png" class="logoPic">
-      <img src="./project.png" class="project">
-    </a>
-    <ul>
-      <li class="navList">
-        <a href="#/index">
-          <span>首页</span>
-          <span>HOME</span>
+     <section>
+        <a href="" class="logo">
+          <img src="./logo.png" class="logoPic">
+          <img src="./project.png" class="project">
         </a>
-      </li>
-      <li class="navList">
-        <a href="#/company" class="active">
-          <span>公司简介</span>
-          <span>HOME</span>
-        </a>
-        <div class="list">
-
-          <div class="active">公司介绍</div>
-          <div>公司介绍</div>
-          <div>公司介绍</div>
+        <ul>
+          <li v-for="(item,index) in category" :key="item.id" class="navList">
+            <a :href="item.route" :class="{active:current==index}" @click="c(item)">
+              <span>{{item.title}}</span>
+              <span>{{item.eng}}</span>
+            </a> 
+          </li>
+        </ul>   
+        <div class="search">
+          <input type="" name="" class="searchBox" placeholder="案例搜索">
+          <i class="iconfont icon-sousuo- searchBtn"></i>
         </div>
-      </li>
-      <li class="navList">
-        <a href="#/news">
-          <span>新闻动态</span>
-          <span>NEWS</span>
-        </a>
-      </li>
-      <li class="navList">
-        <a href="#/services">
-          <span>服务项目</span>
-          <span>SEIVICES</span>
-        </a>
-      </li>
-      <li class="navList">
-        <a href="#/case">
-          <span>案例展示</span>
-          <span>CASES</span>
-        </a>
-      </li>
-      <li class="navList">
-        <a href="#/team">
-          <span>团队介绍</span>
-          <span>TEAM</span>
-        </a>
-      </li>
-      <li class="navList">
-        <a href="#/contact">
-          <span>联系我们</span>
-          <span>CONTACT US</span>
-        </a>
-      </li>
-    </ul>
-    <div class="search">
-      <input type="" name="" class="searchBox" placeholder="案例搜索">
-      <i class="iconfont icon-sousuo- searchBtn"></i>
-    </div>
+     </section>
+     <transition name="tran">
+      <div class="list" v-if='children.length'>
+          <div v-for="(item,index) in children" @click="currentchilren=index"  :class="{active:currentchilren==index}"  :key="item.id">
+            <a :href="item.route">{{item.title}}</a>
+          </div>
+      </div>
+     </transition>
   </div>
 </template>
 <script>
@@ -65,10 +32,32 @@
   export default {
     name: 'side',
     data() {
-      return {}
+      return {
+        current:0,
+        currentchilren:0,
+        category:[
+          {id:0,title:'首页',eng:'Home',route:"#/index",children:[]},
+          {id:1,title:'公司简介',eng:'Home',route:"#/company",children:[
+            {id:7,title:'公司介绍',route:'#/company/company_desc'},
+            {id:8,title:'发展历程',route:'#/company/company_culture'},
+            {id:9,title:'企业文化',route:'#/company/company_dev'},
+          ]},
+          {id:2,title:'新闻动态',eng:'NEWS',route:"#/news",children:[]},
+          {id:3,title:'服务项目',eng:'SEIVICES',route:"#/services",children:[]},
+          {id:4,title:'案例展示',eng:'CASE',route:"#/case",children:[]},
+          {id:5,title:'团队介绍',eng:'TEAM',route:"#/team",children:[]},
+          {id:6,title:'联系我们',eng:'CONTACT US',route:"#/contact",children:[]},
+        ],
+        children:[],
+      }
     },
 
-    methods: {},
+    methods: {
+      c(item){
+          this.current=item.id;
+          this.children=item.children
+      }
+    },
   }
 </script>
 <style lang="scss" scoped="">
@@ -88,6 +77,12 @@
   body, html {
     height: 100%;
   }
+  .tran-enter-active, .tran-leave-active {
+    transition: transform .5s cubic-bezier(0.86, 0, 0.07, 1) ;
+  }
+  .tran-enter,.tran-leave-to {
+    transform: translate3d(-100%,0,0);
+  }
 
   #side {
     width: 190px;
@@ -100,9 +95,18 @@
     left: 0;
     height: 100vh;
     padding-top: 40px;
+    z-index: 100000
+  }
+  #side section{
+    width:100%;
+    height:100%;
+    position: absolute;
+    left:0;
+    top:0;
+    z-index: 2;
+    background: #fff;
 
   }
-
   #side.logo {
     display: block;
     width: 100%;
@@ -138,31 +142,35 @@
 
   }
 
-  #side ul .navList .list {
+  .list {
     width: 182px;
     height: 100vh;
     position: absolute;
-    top: 0px;
-    right: -182px;
+    top:0;
+    left:100%;
     background: #363636;
-    z-side: 5;
-    opacity: 0;
   }
 
-  #side ul .navList .list div {
+  .list div {
     width: 100%;
     height: 109px;
     border-bottom: 2px solid #505050;
     line-height: 109px;
-    color: #7b7b7b;
     text-align: center;
   }
-
-  #side ul .navList .list div.active {
-    background: #01a5e2;
-    color: #fff;
+  .list div a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #7b7b7b;
   }
-
+  .list div.active {
+    background: #01a5e2;
+  }
+  .list div.active a{
+      background: #01a5e2;
+      color: #fff;
+  }
   #side ul .navList a {
     display: block;
     height: 100%;
@@ -198,7 +206,6 @@
     position: absolute;
     right: 0;
     top: 0;
-
   }
 
   #side .search {
