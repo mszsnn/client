@@ -45,15 +45,17 @@ export default {
   }
 
   .move-enter-active, .move-leave-active {
-    transition: transform .5s,filter .5s;
+    transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1) ,filter .1s 1s , opacity 1s cubic-bezier(0.86, 0, 0.07, 1);
   }
-  .move-enter /* .fade-leave-active in below version 2.1.8 */ {
-    transform:translateY(100%);
-    filter:blur(10px);
+  .move-enter {
+    transform:translate3d(0,100%,0);
+    filter:blur(2px);
+    opacity:0
   }
   .move-leave-to{
-    transform:translateY(-100%);
-    filter:blur(10px);
+    transform:translate3d(0,-100%,0);
+    filter:blur(2px);
+    opacity:0
   }
   .ms_con{
     width:100%;
@@ -64,5 +66,6 @@ export default {
       position:absolute;
       left:0;
       top:0;
+      transform-style:preserve-3d;
   }
 </style>

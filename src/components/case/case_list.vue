@@ -13,24 +13,24 @@
                             <div class="case_imgbox">
                                 <img src="./case_items.png" alt="">
                             </div>
-<<<<<<< HEAD
-                            <div class="case_add1"></div>
-                            <div class="case_num">01</div>
-                            <div class="case_name">山大君宇网</div>
-                            <div class="case_eng">shandajunyuwang</div>
+                            <div class="case_bottom">
+                                <div class="case_add1"><span>|</span><span>|</span><span>|</span></div>
+                                <div class="case_num">01</div>
+                                <div class="case_name">山大君宇网</div>
+                                <div class="case_eng">shandajunyuwang</div>
+                            </div>
                         </router-link>
                     </swiper-slide>
                     <swiper-slide>
                         <div class="case_session">
                             <div class="case_imgbox">
                                 <img src="./case_items.png" alt="">
-=======
+                            </div>    
                             <div class="case_bottom">
                                 <div class="case_add1"><span>|</span><span>|</span><span>|</span></div>
                                 <div class="case_num">01</div>
                                 <div class="case_name">山大君宇网</div>
                                 <div class="case_eng">shandajunyuwang</div>
->>>>>>> 576357a906c50f9da204aae2965cc5a11b9b2323
                             </div>
                         </div>
                     </swiper-slide>
