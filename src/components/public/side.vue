@@ -117,7 +117,7 @@
     display: block;
     width: 100%;
     height: 56px;
-    padding:30px 0;
+    padding:24px 0;
   }
 
   #side.logo img {
@@ -206,9 +206,10 @@
     content: "";
     display: block;
     width: 7px;
-    height: 58px;
+    height: 100%;
     background: url("./active.png");
     background-repeat: no-repeat;
+    background-size:cover;
     position: absolute;
     right: 0;
     top: 0;
@@ -217,7 +218,7 @@
   #side .search {
     width: 100%;
     height: 24px;
-    margin-top: 40px;
+    margin-top: 20px;
     position: relative;
   }
 
