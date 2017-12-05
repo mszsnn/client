@@ -1,7 +1,7 @@
 <template>
   <div id="side" class="nav">
      <section>
-        <a href="" class="logo">
+        <a href="#/" class="logo">
           <img src="./logo.png" class="logoPic">
           <img src="./project.png" class="project">
         </a>
@@ -102,16 +102,15 @@
     height:100%;
     position: absolute;
     left:0;
-    top:0;
+    top:0px;
     z-index: 2;
     background: #fff;
-
   }
-  #side.logo {
+  #side .logo{
     display: block;
     width: 100%;
     height: 56px;
-    margin-top: 31px;
+    padding:30px 0;
   }
 
   #side.logo img {
