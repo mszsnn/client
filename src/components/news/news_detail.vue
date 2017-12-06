@@ -58,8 +58,7 @@
     .news_detail_container main{
       width: 930px;
       height:auto;
-      margin:0 auto;
-      margin-top: 98px;
+      margin:98px auto 0;
       overflow: hidden;
     }
     .news_detail_container .title{

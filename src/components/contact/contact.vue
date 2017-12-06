@@ -1,11 +1,6 @@
 <template>
       <div id="contact">
-            <div class="top">
-                  <h1>about unique</h1>
-                  <h2>新闻中心</h2>
-                  <h6>Art is a language that loves life</h6>
-                  <h1>+</h1>
-            </div>
+            <t :data='obj'></t>
             <div class="contact-con">
                   <div class="left">
                         <img src="./map_03.png" width="373" height="313" alt="">
@@ -42,11 +37,15 @@
       </div>
 </template>
 <script>
+    import t from '../public/title.vue'
     export default {
       name:'contact',
       data(){
         return {
-
+            obj:{
+              h1:'Contact us',
+                  h2:'联系我们'
+            }
         }
       },
       methods:{
@@ -56,11 +55,13 @@
 
       },
       components: {
-
+          t
       },
     }
 </script>
+
 <style lang="scss" scoped="">
+      @import url("./animate.css");
       #contact {
             width: 100%;
             height: 100%;
@@ -105,24 +106,31 @@
                   height:313px;
                   overflow: hidden;
                   float:left;
+                  transform:translateX(-500px);
+                  animation: bounceInLeft ease 1s .7s forwards;
             }
             .right{
                   width:452px;
                   height:313px;
                   float:right;
                   color:#333;
-                  font-family: "Microsoft YaHei UI";
                   .title{
                         width:100%;
                         height:auto;
                         overflow: hidden;
                         margin-bottom:20px;
+                        transform: translateX(1000px);
                         .iconBox{
                               float:left;
-                              width:30px;
+                              width:35px;
                               height:35px;
-                              background-color:green;
+                              border-radius: 50%;
+                              overflow: hidden;
+                              text-align: center;
+                              line-height: 35;
+                              font-size: 16px;
                               margin-right:10px;
+                              border:1px solid #ccc;
                         }
                         h4{
                               font-weight: 400;
@@ -130,20 +138,30 @@
                               color:#848484;
                         }
                         h5{
-                              font-weight:400;
                               font-size:14px;
                               font-weight: 600;
                               color:#585858;
                         }
                   }
+                  .title:nth-child(1){
+                        animation: lightSpeedIn ease 1s .7s forwards;
+                  }
+                  .title:nth-child(2){
+                        animation: lightSpeedIn ease 1s .8s forwards;
+                  }
+                  .title:nth-child(3){
+                        animation: lightSpeedIn ease 1s .9s forwards;
+                  }
                   .address{
                         margin-top:50px;
+                        transform:translateX(1000px);
+                        animation: lightSpeedIn ease 1s 1s forwards;
                         h2{
-                              font-family: "Microsoft YaHei UI";
+
                               font-size: 12px;
                         }
                         h3{
-                              font-family: "Microsoft YaHei UI";
+
                               font-size: 12px;
                               color:#b6b6b6;
                         }

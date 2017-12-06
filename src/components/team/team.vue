@@ -1,8 +1,7 @@
 <template>
       <div id="team">
+            <t :data='obj'></t>
             <div class="team-container" ref="teamContainer">
-                  <div class="title"></div>
-                  <div class="add">+</div>
                   <div class="team-main">
                         <swiper :options="swiperOption">
                               <swiper-slide>
@@ -98,16 +97,21 @@
 <script>
       import {swiper, swiperSlide} from 'vue-awesome-swiper'
       import 'swiper/dist/css/swiper.css'
+      import t from '../public/title.vue'
       export default {
           name:'team',
           data(){
               return {
                   swiperOption: {
-                      slidesPerView: 3,
+                      slidesPerView: 4,
 //                      spaceBetween : 20,
 //                      freeMode: true,
                       centeredSlides : true,
                       initialSlide: 1,
+                  },
+                  obj:{
+                      h1:'Team Introduction',
+                      h2:'团队展示'
                   }
               }
           },
@@ -126,7 +130,8 @@
           },
           components: {
               swiper,
-              swiperSlide
+              swiperSlide,
+              t
           },
     }
 
@@ -135,6 +140,8 @@
     #team{
         width:100%;
         height:100%;
+        overflow: auto;
+        padding-top: 80px;
     }
     .team-container{
         width:100%;
@@ -144,21 +151,6 @@
         left:0;
         overflow: hidden;
     }
-    .title{
-        width:261px;
-        height:77px;
-        margin:83px auto 0;
-        background:url("./team-title.png") 261px 77px;
-    }
-    .add{
-        width:16px;
-        height:16px;
-        margin:30px auto 0;
-        font-size:20px;
-        text-align:center;
-        line-height:16px;
-        color:#e4e4e4;
-    }
     .team-main{
         width:auto;
         height:550px;
@@ -166,8 +158,8 @@
     }
 
     .team-session{
-        width:400px;
-        height:550px;
+        width:310px;
+        height:380px;
         background-color:#fff;
         transform:scale(0.9);
         transition:all .5s;
@@ -192,9 +184,12 @@
         font-family: "苹方";
         font-size:12px;
     }
+    .swiper-slide-active{
+          z-index:99;
+    }
     .swiper-slide-active .team-session{
-        width:400px;
-        height:550px;
+        width:310px;
+        height:380px;
         transform:scale(1);
     }
     .swiper-slide-active .team-session .name{
@@ -206,12 +201,15 @@
     }
     .imgBox{
         width:100%;
-        height:455px;
+        height:280px;
         background-color:tan;
         overflow: hidden;
         position:relative;
         top:0;
         left:0;
+    }
+    .imgBox img{
+          width:100%;
     }
     .imgBox::after{
         content:"";
@@ -231,12 +229,12 @@
     #team-person{
         width:1040px;
         height:auto;
-        margin:50px auto 0;
+        margin:0px auto 0;
         background-color: #fff;
-        z-index: 99;
+        z-index: 999;
         display: none;
         position:relative;
-        top:0;
+        /*top:-150px;*/
         left:0;
     }
     #team-person .left{
