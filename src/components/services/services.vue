@@ -1,10 +1,9 @@
 <template>
       <div id="services">
         <div class="services_content">
+
           <!-- 标题 -->
-          <a href="" class="services_title"></a>
-          <!-- 添加icon -->
-          <i class="services_add">+</i>
+          <t :data='obj'></t>
           <div class="services_spot">
             <ul>
               <li>
@@ -28,8 +27,7 @@
                 <h2>平面设计</h2>
                 <h3>pingmian design</h3>
               </li>
-            </ul>
-            <ul>
+
               <li>
                 <div class="services_logo">
                   <img src="./services_logo.png" alt="">
@@ -58,16 +56,19 @@
       </div>
 </template>
 <script>
-    import side from "../public/side.vue"
+  import t from '../public/title.vue'
     export default {
       name:'services',
       data(){
         return {
-
+          obj:{
+            h1:'Service Items',
+            h2:'服务项目'
+          }
         }
       },
       components:{
-        side
+        t
       },
       methods:{
 
@@ -87,45 +88,43 @@
     margin: 0 auto;
     padding-top: 84px
   }
-  /* 标题部分 */
-  #services .services_title{
-    display: block;
-    width: 257px;
-    height: 74px;
-    background: url('./services_title.png') no-repeat center;
-    background-size: 100% 100%;
-    margin: 0 auto ;
-  }
-  /* 添加icon*/
-  #services .services_add{
-    display: block;
-    font-size: 40px;
-    color: #e4e4e4;
-    width: 100%;
-    text-align: center;
-    margin-top: 22px;
-    font-style: normal;
-  }
+
   #services .services_spot{
     width: 100%;
     height: auto;
     overflow: hidden;
-    margin-top: 18px;
+    opacity: 0;
+    animation: run3 1.3s 1s forwards;
+  }
+  @keyframes run3 {
+    0%{
+      transform: translateY(300px);
+      opacity: 0;
+    }
+    100%{
+      transform: translateY(0px);
+      opacity: 1;
+    }
   }
   #services ul{
     width: 100%;
     height: auto;
     overflow: hidden;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
   }
   #services ul li{
-    width: 168px;
-    height: 236px;
+    width: 148px;
+    height: auto;
+    margin-right: 75px;
+    margin-bottom: 8px;
+  }
+  #services ul li:nth-child(3n){
+    margin-right: 0;
   }
   #services .services_logo{
-    width: 168px;
-    height: 168px;
+    width: 148px;
+    height: 148px;
     border: 3px solid #eeeeee;
     box-sizing: border-box;
     display: flex;
@@ -133,14 +132,18 @@
     align-items: center;
   }
   #services .services_logo img{
-    width: 70px;
-    height: 70px;
+     width: 70px;
+     height: 70px;
+     transition:all 1s;
+   }
+  #services .services_logo:hover img{
+    transform: scale(1.1);
   }
   #services .services_spot h2{
     font-size: 14px;
     color: #585858;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
   }
   #services .services_spot h3{
     font-size: 12px;

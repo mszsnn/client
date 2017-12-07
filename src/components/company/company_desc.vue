@@ -2,9 +2,7 @@
       <div id="company_desc">
           <div class="companyIntro_content">
               <!-- 标题 -->
-              <a href="" class="companyIntro_title"></a>
-              <!-- 添加icon -->
-              <i class="companyIntro_add">+</i>
+              <t :data='obj'></t>
               <!-- 公司图片 -->
               <a href="" class="companyIntro_img">
                   <img src="./companyIntro_img.png" alt="">
@@ -29,22 +27,33 @@
       </div>
 </template>
 <script>
-    export default {
+   import t from '../public/title.vue'
+
+   export default {
       name:'company_desc',
       data(){
         return {
-
+          obj:{
+            h1:'the profile',
+            h2:'公司介绍'
+          }
         }
       },
+
       methods:{
 
       },
+      components:{
+        t
+      },
+
       mounted(){
 
       }
     }
 </script>
 <style lang="scss" scoped="">
+  @import "./animate.css";
 #company_desc{
   width:100%;
   height:100%;
@@ -54,37 +63,33 @@
   margin: 0 auto;
   padding-top: 84px
 }
-/* 标题部分 */
-#company_desc .companyIntro_title{
-  display: block;
-  width: 257px;
-  height: 74px;
-  background: url('./companyIntro_title.png') no-repeat center;
-  background-size: 100% 100%;
-  margin: 0 auto ;
-}
-/* 添加icon*/
-#company_desc .companyIntro_add{
-  display: block;
-  font-size: 40px;
-  color: #e4e4e4;
-  width: 100%;
-  text-align: center;
-  margin-top: 22px;
-  font-style: normal;
-}
+
 /* 公司图片 */
 #company_desc .companyIntro_img{
   display: block;
   width: 538px;
   height: 177px;
   /* background: red; */
-  margin: 41px auto 0;
+  margin: 11px auto 0;
+
 }
 #company_desc .companyIntro_img img{
   width: 100%;
   height: 100%;
   display: block;
+  opacity: 0;
+  animation-name:opc,fadeInUp ;
+  animation-duration: 1s,1s;
+  animation-delay: 0.9s,0.9s;
+  animation-fill-mode:forwards,forwards;
+}
+@keyframes opc {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
 }
 /*  公司介绍文本*/
 #company_desc .companyIntro_text{
@@ -93,9 +98,15 @@
   font-size: 10px;
   color: #4c4c4c;
   line-height: 16px;
-  margin-top: 46px;
+  margin-top: 16px;
+  opacity: 0;
+  animation-name:opc,fadeInUp ;
+  animation-duration: 1s,1s;
+  animation-delay: 1.1s,1.1s;
+  animation-fill-mode:forwards,forwards;
 }
 #company_desc .companyIntro_text p{
-  margin-bottom: 15px;
+  margin-bottom: 8px;
+
 }
 </style>
