@@ -9,23 +9,23 @@
                   <div class="newsText">新闻NEWS</div>
               </div>
               <div class="mask">
-                  <span>WEB DESIGN</span>
-                  <span>专业的企业网站建设</span>
-                  <span>Art is a language that loves life</span>
-                  <div class="design">
+                  <span class="animated bounceInDown">WEB DESIGN</span>
+                  <span class="animated bounceInDown">专业的企业网站建设</span>
+                  <span class="animated bounceInDown">Art is a language that loves life</span>
+                  <div class="design animated bounceInDown">
                       <img src="./design_03.png">
                       <div class="text">设计/建站/开发</div>
                   </div>
-                  <a href="" class="more">more</a>
-                  <div class="plus">
-                      <i class="iconfont icon-iconjia"></i>
+                  <a href="" class="more animated rotateInDownRight">more</a>
+                  <div class="plus animated bounceInDown">
+                      <i class="iconfont icon-iconjia "></i>
                   </div>
                   <!-- <div class="vertical">
                       <div class="line"></div>
                       <div class="lineText">Guitar Music Studio</div>
                   </div> -->
               </div>
-              <div class="case">
+              <div class="case animated wobble">
                   <div class="caseBox">
                       <img src="./index_list_03.png">
                   </div>
@@ -65,7 +65,7 @@
     }
 </script>
 <style lang="" scoped="">
-
+    @import "./animate.css";
     *{
         margin:0;
         padding:0;
@@ -100,6 +100,7 @@
         padding-top: 41px;
         padding-left: 90px;
 
+
     }
     #index .main .mask .more{
         display: block;
@@ -116,6 +117,7 @@
         font-style: italic;
         text-align: center;
         line-height: 22px;
+        animation-delay: 1.8s;
     }
     #index .main .mask .vertical{
         width: 13px;
@@ -127,6 +129,7 @@
 
     #index .main .mask .design{
         margin-top: 28px;
+        animation-delay: 1.6s;
 
     }
     #index .main .mask .design img{
@@ -205,6 +208,7 @@
         bottom:13px;
         right:38px;
         overflow: hidden;
+        animation-delay: 1s;
     }
     #index .main .caseBox{
         width:229px;
@@ -251,22 +255,26 @@
         font-size: 64px;
         font-weight: 800;
         font-style: italic;
+        animation-delay: 1s;
 
     }
     #index .main .mask span:nth-of-type(2){
         font-size: 40px;
         font-family: "宋体";
+        animation-delay: 1.2s;
     }
     #index .main .mask span:nth-of-type(3){
         font-size: 11px;
         letter-spacing: 10px;
         font-style: italic;
+        animation-delay: 1.4s;
     }
     #index .main .mask .plus{
         position: absolute;
         top:44px;
-        left:515px;
+        left:531px;
         color:#fff;
+        animation-delay:1s;
     }
     @font-face {font-family: "iconfont";
         src: url('../../assets/iconfont/iconfont.ttf'); /* IE9*/
