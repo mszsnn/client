@@ -119,6 +119,10 @@
         line-height: 22px;
         animation-delay: 1.8s;
     }
+    #index .main .mask .more:hover{
+        line-height: 15px;
+        text-decoration: underline;
+    }
     #index .main .mask .vertical{
         width: 13px;
         height: 52px;
