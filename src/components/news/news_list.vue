@@ -3,28 +3,23 @@
     <t :data='obj'></t>
     <div class="wheel">
       <swiper :options="swiperOption">
-        <swiper-slide>
-          <router-link class="list" :to="{name:'news_detail'}">
-            <div class="left"></div>
+
+        <swiper-slide v-for="item in news" v-bind:key="item.id">
+          <router-link class="list" :to="{name:'news_detail',query:{id:item.id}}">
+            <div class="left">
+              <h1>{{item.d}}</h1>
+              <h5>{{item.y}}</h5>  
+            </div>
             <div class="right">
                <div>
-                 <div class="title">优逸客参加上海IXDC国际交流大会</div>
-                 <div class="eng">Art is a language that loves life</div>
+                 <div class="title">{{item.title}}</div>
+                 <div class="eng">{{item.engtitle}}</div>
                </div>
-              <div class="des">锯截直线型的板材，小型企业则用圆锯锯截带锯锯切曲线型板材沙发框架,用材可采用中密中密度纤维用开料锯锯截直线型的板材,小型企业则用圆锯锯截.</div>
+              <div class="des">{{item.description}}</div>
             </div>
           </router-link>
         </swiper-slide>
-        <swiper-slide>
-          <div class="list">
-            这是网页
-          </div>
-        </swiper-slide>
-        <swiper-slide>
-          <div class="list">
-            这是网页
-          </div>
-        </swiper-slide>
+        
       </swiper>
       <div class="swiper-button-prev"></div>
       <div class="swiper-button-next"></div>
@@ -50,7 +45,8 @@
         obj:{
           h1:'News information',
           h2:'新闻动态'
-        }
+        },
+        news:[]
       }
     },
     methods: {},
@@ -60,7 +56,16 @@
       t
     },
     mounted() {
-
+       this.$http.get('/api/news/client').then(function(res){
+         res.body.forEach(element => {
+           let date=element.time.split('T')[0];
+           element.time=date;
+           element.y=date.slice(0,4)
+           element.d=date.slice(5);
+         });
+         console.log(res);
+         this.news=res.body;
+       })
     }
   }
 </script>
@@ -95,6 +100,31 @@
           width: 150px;
           height: 100%;
           background: #ccc;
+          text-align: center;
+          box-sizing: border-box;
+          padding:10px 20px;
+          
+          color: #fff;
+          h1{    
+            font-size: 36px;
+            font-family: 'he';
+          }
+          h5{
+            font-size: 18px;
+            text-align: right;
+            font-family: 'he';
+            padding:0 10px;
+            position: relative;
+            &:after{
+              content:'';
+              width:20%;
+              height: 2px;
+              position: absolute;
+              right: 10px;
+              bottom:-6px;
+              background: #fff;
+            }
+          }
         }
         .right {
           width:560px;

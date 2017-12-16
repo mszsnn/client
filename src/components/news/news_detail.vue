@@ -3,28 +3,24 @@
           <div class="news_detail_container">
               <main>
                   <header>
-                    <h1 class="title">优逸客参加上海IXDC国际交流大会</h1>
-                    <h5 class="sub_title">lumbar spin sacrum andcrum and  coccyx</h5>
+                    <h1 class="title">{{news.title}}</h1>
+                    <h5 class="sub_title">{{news.engtitle}}</h5>
                     <ul class="paratext">
                       <li>
                         <span></span>
-                        <i>2017-10-33</i>
+                        <i>{{news.time}}</i>
                       </li>
                       <li>
                         <span></span>
-                        <i>3362</i>
-                      </li>
-                      <li>
-                        <span></span>
-                        <i>3362</i>
+                        <i>{{news.count}}</i>
                       </li>
                     </ul>
                   </header>
-                  <section>
-
+                  <section v-html="news.content">
+                       
                   </section>
               </main>
-              <div class="button"><img src="./button.png"></div>
+              <router-link class="button" :to="{name:'news_list'}"><img src="./button.png"></router-link>
           </div>
       </div>
 </template>
@@ -34,14 +30,19 @@
       name:'news_detail',
       data(){
         return {
-
+            news:{}
         }
       },
-      methods:{
-
-      },
       mounted(){
-
+          let id=this.$route.query.id;
+          this.$http.post('/api/news/clientmore',{id}).then(function(res){
+            console.log(res);
+          res.body.forEach(element => {
+            let date=element.time.split('T')[0];
+            element.time=date;
+          });
+          this.news=res.body[0];
+       }) 
       }
     }
 </script>

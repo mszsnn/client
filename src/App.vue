@@ -42,6 +42,10 @@ export default {
   font-family: "pf";
   src: url("./assets/PingFang Light.ttf");
 }
+@font-face {
+  font-family: "he";
+  src: url("./assets/helveticaneueltpro.ttf");
+}
 
 .move-enter-active,
 .move-leave-active {
