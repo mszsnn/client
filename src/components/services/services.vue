@@ -6,48 +6,12 @@
           <t :data='obj'></t>
           <div class="services_spot">
             <ul>
-              <li>
+              <li v-for="item in items">
                 <div class="services_logo">
-                  <img src="./services_logo.png" alt="">
+                  <img :src=item.img alt="">
                 </div>
-                <h2>平面设计</h2>
-                <h3>pingmian design</h3>
-              </li>
-              <li>
-                <div class="services_logo">
-                  <img src="./services_logo.png" alt="">
-                </div>
-                <h2>平面设计</h2>
-                <h3>pingmian design</h3>
-              </li>
-              <li>
-                <div class="services_logo">
-                  <img src="./services_logo.png" alt="">
-                </div>
-                <h2>平面设计</h2>
-                <h3>pingmian design</h3>
-              </li>
-
-              <li>
-                <div class="services_logo">
-                  <img src="./services_logo.png" alt="">
-                </div>
-                <h2>平面设计</h2>
-                <h3>pingmian design</h3>
-              </li>
-              <li>
-                <div class="services_logo">
-                  <img src="./services_logo.png" alt="">
-                </div>
-                <h2>平面设计</h2>
-                <h3>pingmian design</h3>
-              </li>
-              <li>
-                <div class="services_logo">
-                  <img src="./services_logo.png" alt="">
-                </div>
-                <h2>平面设计</h2>
-                <h3>pingmian design</h3>
+                <h2>{{item.title}}</h2>
+                <h3>{{item.subtitle}}</h3>
               </li>
             </ul>
           </div>
@@ -64,7 +28,11 @@
           obj:{
             h1:'Service Items',
             h2:'服务项目'
-          }
+          
+          },
+          items:[
+            
+          ]
         }
       },
       components:{
@@ -74,6 +42,9 @@
 
       },
       mounted(){
+        this.$http.get('/api/service/show').then(res=>{
+              this.items=res.body;
+        })
 
       }
     }

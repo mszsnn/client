@@ -57,13 +57,14 @@
     },
     mounted() {
        this.$http.get('/api/news/client').then(function(res){
+  
          res.body.forEach(element => {
            let date=element.time.split('T')[0];
            element.time=date;
            element.y=date.slice(0,4)
            element.d=date.slice(5);
          });
-         console.log(res);
+
          this.news=res.body;
        })
     }
