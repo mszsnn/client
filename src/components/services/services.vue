@@ -50,6 +50,7 @@
     }
 </script>
 <style lang="scss" scoped="">
+ @import "./animate.css";
   #services{
     width:100%;
     height:100%;
@@ -64,8 +65,8 @@
     width: 100%;
     height: auto;
     overflow: hidden;
-    opacity: 0;
-    animation: run3 1.3s 1s forwards;
+    
+    
   }
   @keyframes run3 {
     0%{
@@ -89,7 +90,32 @@
     height: auto;
     margin-right: 75px;
     margin-bottom: 8px;
+    opacity: 0;
   }
+  #services ul li:first-child{
+      animation: fadeInUp 0.4s 1s forwards;
+  }
+  #services ul li:nth-child(2){
+      animation: fadeInUp 0.4s 1.2s forwards;
+  }
+  #services ul li:nth-child(3){
+      animation: fadeInUp 0.4s 1.4s forwards;
+  }
+  #services ul li:nth-child(4){
+      animation: fadeInUp 0.4s 1.6s forwards;
+  }
+  #services ul li:nth-child(5){
+      animation: fadeInUp 0.4s 1.8s forwards;
+  }
+  #services ul li:nth-child(6){
+      animation: fadeInUp 0.4s 2s forwards;
+  }
+
+
+
+
+
+
   #services ul li:nth-child(3n){
     margin-right: 0;
   }
