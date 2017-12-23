@@ -6,7 +6,7 @@
             </header>
             <div class="case_main">
                 <swiper :options="swiperOption">
-                    <swiper-slide>
+                    <swiper-slide v-for="item in cases">
                     <router-link class="case_session" :to="{name:'case_detail'}">
                         <div class="case_imgbox">
                             <img src="./case_items.png" alt="">
@@ -14,63 +14,11 @@
                         <div class="case_bottom">
                             <div class="case_add1"><span>|</span><span>|</span><span>|</span></div>
                             <div class="case_num">01</div>
-                            <div class="case_name">山大君宇网</div>
-                            <div class="case_eng">shandajunyuwang</div>
+                            <div class="case_name">{{item.titleCh}}</div>
+                            <div class="case_eng">{{item.titleEn}}</div>
                         </div>
                     </router-link>
                 </swiper-slide>
-                    <swiper-slide>
-                        <router-link class="case_session" :to="{name:'case_detail'}">
-                            <div class="case_imgbox">
-                                <img src="./case_items.png" alt="">
-                            </div>
-                            <div class="case_bottom">
-                                <div class="case_add1"><span>|</span><span>|</span><span>|</span></div>
-                                <div class="case_num">02</div>
-                                <div class="case_name">山大君宇网</div>
-                                <div class="case_eng">shandajunyuwang</div>
-                            </div>
-                        </router-link>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <router-link class="case_session" :to="{name:'case_detail'}">
-                            <div class="case_imgbox">
-                                <img src="./case_items.png" alt="">
-                            </div>
-                            <div class="case_bottom">
-                                <div class="case_add1"><span>|</span><span>|</span><span>|</span></div>
-                                <div class="case_num">03</div>
-                                <div class="case_name">山大君宇网</div>
-                                <div class="case_eng">shandajunyuwang</div>
-                            </div>
-                        </router-link>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <router-link class="case_session" :to="{name:'case_detail'}">
-                            <div class="case_imgbox">
-                                <img src="./case_items.png" alt="">
-                            </div>
-                            <div class="case_bottom">
-                                <div class="case_add1"><span>|</span><span>|</span><span>|</span></div>
-                                <div class="case_num">04</div>
-                                <div class="case_name">山大君宇网</div>
-                                <div class="case_eng">shandajunyuwang</div>
-                            </div>
-                        </router-link>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <router-link class="case_session" :to="{name:'case_detail'}">
-                            <div class="case_imgbox">
-                                <img src="./case_items.png" alt="">
-                            </div>
-                            <div class="case_bottom">
-                                <div class="case_add1"><span>|</span><span>|</span><span>|</span></div>
-                                <div class="case_num">05</div>
-                                <div class="case_name">山大君宇网</div>
-                                <div class="case_eng">shandajunyuwang</div>
-                            </div>
-                        </router-link>
-                    </swiper-slide>
                 </swiper>
             </div>
         </div>
@@ -94,11 +42,16 @@
                 obj: {
                     h1: 'Case study',
                     h2: '案例展示'
-                }
+                },
+                cases:[]
             }
         },
         methods: {},
         mounted(){
+            this.$http.get('/api/case/show').then(function(res){
+               console.log(res)
+                this.cases=res.body;
+            })
         },
         components: {
             swiper,
@@ -167,7 +120,6 @@
         border: 1px solid #e4e5e5;
         margin: 0 auto;
         margin-top: 5px;
-        filter: blur(2px);
     }
 
     .case_container .case_bottom {
