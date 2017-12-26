@@ -8,7 +8,7 @@
           <router-link class="list" :to="{name:'news_detail',query:{id:item.id}}">
             <div class="left">
               <h1>{{item.d}}</h1>
-              <h5>{{item.y}}</h5>  
+              <h5>{{item.y}}</h5>
             </div>
             <div class="right">
                <div>
@@ -19,7 +19,7 @@
             </div>
           </router-link>
         </swiper-slide>
-        
+
       </swiper>
       <div class="swiper-button-prev"></div>
       <div class="swiper-button-next"></div>
@@ -57,7 +57,7 @@
     },
     mounted() {
        this.$http.get('/api/news/client').then(function(res){
-  
+
          res.body.forEach(element => {
            let date=element.time.split('T')[0];
            element.time=date;
@@ -76,42 +76,65 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    padding-top: 80px;
+    @media screen and (min-width: 1366px) {
+      padding-top: 80px;
+    }
+    padding-top: 58px;
   }
 
   .wheel {
     width: 100%;
+    @media screen and (min-width: 1366px) {
+      height: 620px;
+      padding: 80px 0;
+    }
     height: 420px;
-    box-sizing: border-box;
     overflow: hidden;
     padding: 60px 0;
-    margin-top: 40px;
+    margin-top: 35px;
     position: relative;
+    box-sizing: border-box;
     .swiper-container {
       width: 100%;
+      @media screen and (min-width: 1366px) {
+        height: 460px;
+      }
       height: 300px;
       .list {
-        width: 710px;
-        height: 90px;
-        padding: 30px 0;
+        width: 960px;
+        @media screen and (min-width: 1366px) {
+          height: 145px;
+          padding: 42px 0;
+          width: 990px;
+        }
+        height: 102px;
+        padding: 24px 0;
         margin: 0 auto;
         display: flex;
         text-decoration: none;
         .left {
-          width: 150px;
+          @media screen and (min-width: 1366px) {
+            width: 200px;
+          }
+          width: 140px;
           height: 100%;
           background: #ccc;
           text-align: center;
           box-sizing: border-box;
           padding:10px 20px;
-          
           color: #fff;
-          h1{    
-            font-size: 36px;
+          h1{
+            @media screen and (min-width: 1366px) {
+              font-size: 54px;
+            }
+            font-size: 38px;
             font-family: 'he';
           }
           h5{
-            font-size: 18px;
+            @media screen and (min-width: 1366px) {
+              font-size: 28px;
+            }
+            font-size: 20px;
             text-align: right;
             font-family: 'he';
             padding:0 10px;
@@ -128,31 +151,47 @@
           }
         }
         .right {
-          width:560px;
-          padding:0 40px;
+          @media screen and (min-width: 1366px) {
+            width: 790px;
+            padding:0 52px;
+          }
+          width:820px;
+          padding:0 82px;
           box-sizing: border-box;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
           .title{
+            @media screen and (min-width: 1366px) {
+              font-size: 25px;
+            }
             font-size: 18px;
             color: #74cffa;
             font-weight: 400;
             letter-spacing: 1px;
           }
           .eng{
-            font-size: 10px;
+            @media screen and (min-width: 1366px) {
+              font-size: 16px;
+            }
+            font-size: 14px;
             color: #adacac;
           }
           .des{
-            font-size: 12px;
+            @media screen and (min-width: 1366px) {
+              font-size: 16px;
+            }
+            font-size: 14px;
             color: #adacac;
             overflow:hidden;
           }
         }
       }
+      .swiper-slide{
+        transition: background-color .8s;
+      }
       .swiper-slide:hover {
-        background: #f3f3f3;
+        background-color: #f3f3f3;
       }
     }
     .swiper-button-prev {
@@ -161,6 +200,7 @@
       transform: rotate(90deg);
       margin-left: -12px;
       margin-top: 0;
+      color: #f1f1f1;
     }
     .swiper-button-next {
       left: 50%;
@@ -169,6 +209,7 @@
       transform: rotate(90deg);
       margin-left: -12px;
       margin-top: 0;
+      color: #f1f1f1;
     }
 
   }
