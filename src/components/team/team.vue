@@ -103,8 +103,8 @@
           data(){
               return {
                   swiperOption: {
-                      slidesPerView: 4,
-//                      spaceBetween : 20,
+                      slidesPerView: 3,
+                      spaceBetween : 17,
 //                      freeMode: true,
                       centeredSlides : true,
                       initialSlide: 1,
@@ -141,91 +141,107 @@
         width:100%;
         height:100%;
         overflow: auto;
-        padding-top: 80px;
+        padding-top: 50px;
+        box-sizing: border-box;
     }
     .team-container{
         width:100%;
-        min-height: 100%;
         position:relative;
         top:0;
         left:0;
         overflow: hidden;
     }
-    .team-main{
+    .team-container .team-main{
         width:auto;
-        height:550px;
-        margin-top:30px;
+        height:480px;
     }
 
-    .team-session{
-        width:310px;
-        height:380px;
-        background-color:#fff;
-        transform:scale(0.9);
+    .swiper-container .swiper-wrapper .swiper-slide{
+        width:367px!important;
+        height:370px;
+        overflow: hidden;
+        transition:all .5s;
+        transform: translateY(25px);
+    }
+    .swiper-container .swiper-wrapper .swiper-slide .imgBox{
+        height:370px;
+        overflow: hidden;
+        transition:all .5s;
+        position:relative;
+        top:0;
+        left:0;
+    }
+    .swiper-container .swiper-wrapper .swiper-slide .imgBox img{
+        height:auto;
+        width:100%;
+    }
+    .swiper-container .swiper-wrapper .swiper-slide .imgBox::after{
+        content:"";
+        display: block;
+        width:100%;
+        height:100%;
+        position:absolute;
+        top:0;
+        left:0;
+        background-color: rgba(1,165,226,0.7);
+        opacity: 1;
+        /*transition:opacity .5s;*/
+    }
+    .swiper-container .swiper-wrapper .swiper-slide-active{
+        height:480px;
+        transform: translateY(0px);
+    }
+    .swiper-container .swiper-wrapper .swiper-slide-active .imgBox{
+        height:416px;
+    }
+    .swiper-container .swiper-wrapper .swiper-slide-active .imgBox::after{
+        opacity: 0;
+    }
+    @media screen and (min-height: 1920px){
+        .swiper-container .swiper-wrapper .swiper-slide{
+            width:560px!important;
+            height:564px;
+        }
+        .swiper-container .swiper-wrapper .swiper-slide .imgBox{
+            height:564px;
+        }
+        .swiper-container .swiper-wrapper .swiper-slide-active{
+            height:754px;
+        }
+        .swiper-container .swiper-wrapper .swiper-slide-active .imgBox{
+            height:639px;
+        }
+    }
+    .team-container .team-main .team-session{
+        width:100%;
+        height:100%;
         transition:all .5s;
         overflow: hidden;
         margin:0 auto;
     }
-    .team-session .name{
-        display:none;
+    .team-container .team-main .team-session .name{
         font-weight: normal;
         color:#333;
+        text-align: center;
+        box-sizing: border-box;
+        padding-top:15px;
     }
-    .team-session .name h4{
+    .team-container .team-main .team-session .name h4{
         font-family: "宋体";
         font-size:18px;
     }
-    .team-session .name h4 span{
+    .team-container .team-main .team-session .name h4 span{
         font-family: "GillSans","宋体";
         font-size:22px;
     }
-    .team-session .name h5{
-        margin-top:10px;
+    .team-container .team-main .name h5{
+        margin-top:5px;
         font-family: "苹方";
         font-size:12px;
     }
-    .swiper-slide-active{
-          z-index:99;
-    }
-    .swiper-slide-active .team-session{
-        width:310px;
-        height:380px;
-        transform:scale(1);
-    }
-    .swiper-slide-active .team-session .name{
-        display: block;
-    }
-    .swiper-slide-active .imgBox::after{
-        content:"";
-        display: none;
-    }
-    .imgBox{
-        width:100%;
-        height:280px;
-        background-color:tan;
-        overflow: hidden;
-        position:relative;
-        top:0;
-        left:0;
-    }
-    .imgBox img{
-          width:100%;
-    }
-    .imgBox::after{
-        content:"";
-        width:100%;
-        height: 100%;
-        display: block;
-        background-color:rgba(1,165,226,0.8);
-        position:absolute;
-        top:0;
-        left:0;
-    }
-    .team-session .name{
-        text-align: center;
-        box-sizing: border-box;
-        padding-top:37px;
-    }
+
+
+
     #team-person{
         width:1040px;
         height:auto;
