@@ -21,7 +21,7 @@
     margin: 0 auto;
     text-align: center;
     h1 {
-      @media screen and (min-width: 1366px) {
+      @media screen and (min-width: 1367px) {
         font-size: 55px;
       }
       font-size:30px;
@@ -31,7 +31,7 @@
       font-style: italic;
     }
     h2 {
-      @media screen and (min-width: 1366px) {
+      @media screen and (min-width: 1367px) {
         font-size: 34px;
       }
       font-size: 18px;
@@ -48,7 +48,7 @@
       letter-spacing: 3px;
     }
     h1:last-child {
-      @media screen and (min-width: 1366px) {
+      @media screen and (min-width: 1367px) {
         font-size: 43px;
       }
       font-size: 23px;

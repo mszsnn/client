@@ -71,12 +71,11 @@
   }
 </script>
 <style lang="scss" scoped="">
-
   #news_list {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    @media screen and (min-width: 1366px) {
+    @media screen and (min-width: 1367px) {
       padding-top: 80px;
     }
     padding-top: 58px;
@@ -84,7 +83,7 @@
 
   .wheel {
     width: 100%;
-    @media screen and (min-width: 1366px) {
+    @media screen and (min-width: 1367px) {
       height: 620px;
       padding: 80px 0;
     }
@@ -96,13 +95,13 @@
     box-sizing: border-box;
     .swiper-container {
       width: 100%;
-      @media screen and (min-width: 1366px) {
+      @media screen and (min-width: 1367px) {
         height: 460px;
       }
       height: 300px;
       .list {
         width: 960px;
-        @media screen and (min-width: 1366px) {
+        @media screen and (min-width: 1367px) {
           height: 145px;
           padding: 42px 0;
           width: 990px;
@@ -113,7 +112,7 @@
         display: flex;
         text-decoration: none;
         .left {
-          @media screen and (min-width: 1366px) {
+          @media screen and (min-width: 1367px) {
             width: 200px;
           }
           width: 140px;
@@ -124,14 +123,14 @@
           padding:10px 20px;
           color: #fff;
           h1{
-            @media screen and (min-width: 1366px) {
+            @media screen and (min-width: 1367px) {
               font-size: 54px;
             }
             font-size: 38px;
             font-family: 'he';
           }
           h5{
-            @media screen and (min-width: 1366px) {
+            @media screen and (min-width: 1367px) {
               font-size: 28px;
             }
             font-size: 20px;
@@ -151,7 +150,7 @@
           }
         }
         .right {
-          @media screen and (min-width: 1366px) {
+          @media screen and (min-width: 1367px) {
             width: 790px;
             padding:0 52px;
           }
@@ -162,7 +161,7 @@
           flex-direction: column;
           justify-content: space-between;
           .title{
-            @media screen and (min-width: 1366px) {
+            @media screen and (min-width: 1367px) {
               font-size: 25px;
             }
             font-size: 18px;
@@ -171,14 +170,14 @@
             letter-spacing: 1px;
           }
           .eng{
-            @media screen and (min-width: 1366px) {
+            @media screen and (min-width: 1367px) {
               font-size: 16px;
             }
             font-size: 14px;
             color: #adacac;
           }
           .des{
-            @media screen and (min-width: 1366px) {
+            @media screen and (min-width: 1367px) {
               font-size: 16px;
             }
             font-size: 14px;
@@ -213,4 +212,8 @@
     }
 
   }
+
+
+
+
 </style>
