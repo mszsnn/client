@@ -6,8 +6,8 @@
             </header>
             <div class="case_main">
                 <swiper :options="swiperOption">
-                    <swiper-slide v-for="item in cases">
-                    <router-link class="case_session" :to="{name:'case_detail'}">
+                    <swiper-slide v-for="item in cases" :key="item.id">
+                    <router-link class="case_session" :to="{name:'case_detail',params:{id:item.id}}">
                         <div class="case_imgbox">
                             <img src="./case_items.png" alt="">
                         </div>
@@ -33,11 +33,16 @@
         data(){
             return {
                 swiperOption: {
-                    slidesPerView: 3,
-                    spaceBetween: 20,
-                    autoPlay: 1000,
+                    slidesPerView:4,
+                    spaceBetween:40,
                     loop: true,
-
+                    grabCursor: true,
+                    breakpoints: {
+                        1367: {
+                            slidesPerView: 3,
+                            spaceBetween: 24,
+                        }
+                    }
                 },
                 obj: {
                     h1: 'Case study',
@@ -49,7 +54,6 @@
         methods: {},
         mounted(){
             this.$http.get('/api/case/show').then(function(res){
-               console.log(res)
                 this.cases=res.body;
             })
         },
@@ -174,9 +178,6 @@
         opacity: 0;
     }
 
-    .case_session:hover .case_imgbox {
-        filter: none;
-    }
 
     .case_container .case_add1 span:last-child {
         position: absolute;
@@ -199,7 +200,7 @@
 
     .case_session:hover .case_bottom {
         height: 300px;
-        background: orange;
+        background: #01a5e2;
         color: #fff;
     }
 
@@ -217,6 +218,66 @@
     .case_container .case_eng {
         font-size: 16px;
         text-align: center;
+    }
+    @media screen and (min-width:1367px){
+        .case_container .case_session {
+            width: 402px;
+            height: 646px;
+            background: #fff;
+            margin: 0 auto;
+            border: 1px solid #e4e5e5;
+            position: relative;
+            display: block;
+        }
+        .case_container .case_imgbox {
+            width: 375px;
+            height: 346px;
+            border: 1px solid #e4e5e5;
+            margin: 0 auto;
+            margin-top:11px;
 
+        }
+        .case_container .case_imgbox img{
+            display: block;
+            width:100%;
+            height:100%;
+        }
+        .case_container .case_bottom {
+            width: 402px;
+            height: 290px;
+            transition: height .5s ease-in;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        .case_session:hover .case_bottom {
+            height: 415px;
+            background: #01a5e2;
+            color: #fff;
+        }
+    }
+    @keyframes comeIn {
+        0%{
+            transform:translateY(500px);
+        }
+        100%{
+            transform:translateY(0px);
+        }
+    }
+    .swiper-slide{
+        transform:translateY(500px);
+        animation:comeIn 1s ease-in .2s forwards;
+    }
+    .swiper-slide:nth-child(1){
+        animation:comeIn 1s ease-in .4s forwards;
+    }
+    .swiper-slide:nth-child(2){
+        animation:comeIn 1s ease-in .6s forwards;
+    }
+    .swiper-slide:nth-child(3){
+        animation:comeIn 1s ease-in .8s forwards;
+    }
+    .swiper-slide:nth-child(4){
+        animation:comeIn 1s ease-in 1s forwards;
     }
 </style>

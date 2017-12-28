@@ -130,7 +130,11 @@
               }
           },
           mounted(){
-
+              this.$http.get('/api/team/client').then(function(res){
+                  res.body.forEach(element => {
+                      console.log(element);
+                  });
+              })
           },
           components: {
               swiper,
@@ -201,21 +205,7 @@
     .swiper-container .swiper-wrapper .swiper-slide-active .imgBox::after{
         opacity: 0;
     }
-    @media screen and (min-height: 1920px){
-        .swiper-container .swiper-wrapper .swiper-slide{
-            width:560px!important;
-            height:564px;
-        }
-        .swiper-container .swiper-wrapper .swiper-slide .imgBox{
-            height:564px;
-        }
-        .swiper-container .swiper-wrapper .swiper-slide-active{
-            height:754px;
-        }
-        .swiper-container .swiper-wrapper .swiper-slide-active .imgBox{
-            height:639px;
-        }
-    }
+
     .team-container .team-main .team-session{
         width:100%;
         height:100%;
@@ -250,7 +240,6 @@
         width:1022px;
         height:518px;
         margin:0 auto 0;
-        background-color: red;
         z-index: 999;
         display: none;
         position:absolute;
@@ -270,8 +259,8 @@
     #team-person .right{
         width:530px;
         min-height:300px;
-        float:right;
-        margin-right:60px;
+        float:left;
+        margin-left:40px;
         margin-top:75px;
     }
     #team-person .right .name h5{
@@ -317,9 +306,39 @@
     }
 
     @media screen and (min-width:1920px){
+        .team-container{
+            height:754px;
+        }
+
+        .swiper-container .swiper-wrapper .swiper-slide{
+            width:560px!important;
+            height:564px;
+        }
+        .swiper-container .swiper-wrapper .swiper-slide .imgBox{
+            height:564px;
+        }
+        .swiper-container .swiper-wrapper .swiper-slide-active{
+            height:754px;
+        }
+        .swiper-container .swiper-wrapper .swiper-slide-active .imgBox{
+            height:639px;
+        }
+
+        .team-container .team-main .team-session .name h4{
+            font-size:24px;
+        }
+        .team-container .team-main .team-session .name h4 span{
+            font-size:30px;
+        }
+        .team-container .team-main .name h5{
+            font-size:18px;
+        }
+
         #team-person{
             width:1645px;
             height:823px;
+            top:124px;
+            right:70px;
         }
         #team-person .left{
             width:550px;
@@ -327,8 +346,51 @@
         }
         #team-person .right{
             width:750px;
-            margin-right:164px;
+            margin-left:87px;
             margin-top:126px;
+        }
+
+
+
+        #team-person .right .name h5{
+            font-weight: 400;
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+        #team-person .right .name h4{
+            font-size: 30px;
+            padding-bottom:8px;
+        }
+        #team-person .right .line{
+            width:717px;
+            height:2px;
+            position:relative;
+            top:0;
+            left:0;
+            margin-bottom:50px;
+        }
+        #team-person .right .line::after{
+            content:"";
+            display: block;
+            width:220px;
+            height: 2px;
+            background-color:#02a6f6;
+        }
+        #team-person .right .con p{
+            font-size: 14px;
+            color:#333;
+            margin-bottom:18px;
+        }
+        #team-person .close{
+            width:40px;
+            height:40px;
+            font-size: 32px;
+            text-align: center;
+            line-height: 40px;
+            cursor:pointer;
+            position:absolute;
+            top:-40px;
+            right:0;
         }
     }
 </style>

@@ -2,10 +2,10 @@
       <div id="case_detail">
           <main class="case_main">
               <header>
-                  <a href="" class="case_back">
+                  <router-link :to="{name:'case_list'}" class="case_back">
                       <i class="iconfont icon-arrow-left"></i>
                       <span>返回</span>
-                  </a>
+                  </router-link>
                   <div class="case_right">
                       <a href="" class="case_pre">
                           <i class="iconfont icon-vertical-copy"></i>
