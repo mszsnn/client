@@ -3,7 +3,7 @@
             <t :data='obj'></t>
             <div class="contact-con">
                   <div class="left">
-                      <div id="allmap"></div>
+                        <img src="./map.png" alt="">
                   </div>
                   <div class="right">
                         <div class="title">
@@ -11,7 +11,7 @@
                                     <i class="iconfont icon-tubiaozhizuomoban"></i>
                               </div>
                               <div class="t-left">
-                                    <h4>add/你可以通过这个地址找我</h4>
+                                    <h4>ADD/你可以通过这个地址找我</h4>
                                     <h5>平阳路学府街口凯通大厦2层</h5>
                               </div>
                         </div>
@@ -20,7 +20,7 @@
                                     <i class="iconfont icon-phone"></i>
                               </div>
                               <div class="t-left">
-                                    <h4>tel/你可以通过这个电话联系我</h4>
+                                    <h4>TEL/你可以通过这个电话联系我</h4>
                                     <h5>61440009/7856432</h5>
                               </div>
                         </div>
@@ -29,14 +29,14 @@
                                     <i class="iconfont icon-youjian"></i>
                               </div>
                               <div class="t-left">
-                                    <h4>add/你可以通过这个地址找我</h4>
+                                    <h4>ADD/你可以通过这个地址找我</h4>
                                     <h5>61440009/7856432</h5>
                               </div>
                         </div>
                         <div class="address">
                               <h2>乘车路线</h2>
                               <h3>Detailed address</h3>
-                              <p>乘坐13路、21路、39路、807路、823路、825路、877路(外环)、877路(内环) 903路、57路、56路、906</p>
+                              <p>乘坐13路、21路、39路、807路、823路、825路、877路(外环)、877路(内环) 903路、57路、56路、906路</p>
                         </div>
                   </div>
             </div>
@@ -56,18 +56,10 @@
         }
       },
       methods:{
-          ready: function() {
-              // 百度地图API功能
-              var map = new BMap.Map("allmap");  // 创建Map实例
-              var point = new BMap.Point(112.560442,37.813586);
-              map.centerAndZoom(point,15);
-              var marker = new BMap.Marker(point);
-              map.addOverlay(marker);
-              map.setMapStyle({style:"grayscale"});
-          }
+
       },
       mounted(){
-          this.ready();
+         
       },
       components: {
           t
@@ -134,12 +126,15 @@
                   height:373px;
                   overflow: hidden;
                   float:left;
-                  transform:translateX(-500px);
+                  transform:translateX(-1000px);
                   animation: bounceInLeft ease 1s .7s forwards;
                     @media screen and (min-width:1920px){
                         width: 555px;
                         height: 500px;
                     }
+                  img{
+                        width:100%;
+                  }
             }
             .right{
                   width:452px;
