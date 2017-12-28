@@ -3,7 +3,6 @@
      <section>
         <a href="#/" class="logo">
           <img src="./logo.png" class="logoPic">
-          <img src="./project.png" class="project">
         </a>
         <ul>
           <li v-for="(item,index) in category" :key="item.id" class="navList">
@@ -13,10 +12,7 @@
             </a> 
           </li>
         </ul>   
-        <div class="search">
-          <input type="" name="" class="searchBox" placeholder="案例搜索">
-          <i class="iconfont icon-sousuo- searchBtn"></i>
-        </div>
+
      </section>
      <transition name="tran">
       <div class="list" v-if='children.length'>
@@ -92,7 +88,7 @@
   }
 
   #side {
-    width: 190px;
+    width: 203px;
     float: left;
     box-shadow: 3px 0 5px 3px rgba(0, 0, 0, 0.1);
     padding-bottom: 117px;
@@ -116,17 +112,15 @@
   #side .logo{
     display: block;
     width: 100%;
-    height: 56px;
-    padding:24px 0;
+    padding:26px 0;
+    overflow: hidden;
   }
 
-  #side.logo img {
+  #side .logo img {
     display: block;
-    float: left;
-  }
-
-  #side .logo .logoPic {
-    margin-left: 30px;
+    width:65px;
+    height:55px;
+    margin:0 auto;
   }
 
   #side .logo .project {
@@ -145,23 +139,24 @@
   #side ul .navList {
     width: 100%;
     position: relative;
-
   }
 
   .list {
-    width: 182px;
+    width: 147px;
     height: 100vh;
     position: absolute;
     top:0;
     left:100%;
-    background: #363636;
+    background: #f6f6f6;
+    padding-top:123px;
+
   }
 
   .list div {
     width: 100%;
-    height: 109px;
-    border-bottom: 2px solid #505050;
-    line-height: 109px;
+    height: 56px;
+    border-bottom: 2px solid #f6f6f6;
+    line-height: 56px;
     text-align: center;
   }
   .list div a{
@@ -183,7 +178,8 @@
     font-size: 16px;
     font-family: "苹方", " 微软雅黑";
     color: #7d7d7d;
-    text-align: center;
+    /*text-align: center;*/
+    padding-left: 71px;
   }
 
   #side ul .navList a span:nth-of-type(1) {
@@ -193,7 +189,8 @@
   }
 
   #side ul .navList a span:nth-of-type(2) {
-    font-size: 12px;
+    font-size: 16px;
+      font-family: "San Francisco Display";
   }
 
   #side ul .navList a.active {
@@ -215,30 +212,11 @@
     top: 0;
   }
 
-  #side .search {
-    width: 100%;
-    height: 24px;
-    margin-top: 20px;
-    position: relative;
-  }
 
-  #side .searchBox {
-    width: 130px;
-    height: 12px;
-    border: 1px solid #f3f3f3;
-    border-radius: 24px;
-    margin-left: 17px;
-    font-size: 12px;
-    text-align: left;
-    padding: 6px 13px;
+  @media screen and (min-width:1920px){
+      #side{
+          width:272px;
+      }
   }
-
-  #side .searchBtn {
-    position: absolute;
-    right: 26px;
-    top: 5px;
-    color: #3ebbe9;
-  }
-
 
 </style>

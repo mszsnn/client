@@ -2,28 +2,23 @@
       <div id="index">
          <div class="main">
               <img src="./homebg_03.png" class="bgpicture">
-              <div class="news">
-                  <div class="plus">
-                      <i class="iconfont icon-iconjia"></i>
-                  </div>
-                  <div class="newsText">新闻NEWS</div>
-              </div>
+
               <div class="mask">
                   <span class="animated bounceInDown">WEB DESIGN</span>
                   <span class="animated bounceInDown">专业的企业网站建设</span>
                   <span class="animated bounceInDown">Art is a language that loves life</span>
                   <div class="design animated bounceInDown">
                       <img src="./design_03.png">
-                      <div class="text">设计/建站/开发</div>
+                      <div class="text">设计 / 建站 / 开发</div>
                   </div>
                   <a href="" class="more animated rotateInDownRight">more</a>
                   <div class="plus animated bounceInDown">
                       <i class="iconfont icon-iconjia "></i>
                   </div>
-                  <!-- <div class="vertical">
-                      <div class="line"></div>
-                      <div class="lineText">Guitar Music Studio</div>
-                  </div> -->
+                   <div class="vertical">
+                       <div class="lineText">Guitar Music Studio</div>
+                       <div class="line"></div>
+                  </div>
               </div>
               <div class="case animated wobble">
                   <div class="caseBox">
@@ -35,14 +30,10 @@
                   <div class="caseRight">
                       <i class="iconfont icon-jiantou-you-shixin-yuanxing"></i>
                   </div>
-                  <div class="latestCase">最新案例</div>
+                  <div class="latestCase">▪最新案例</div>
 
               </div>
-              <div class="bannerDot">
-                  <div class="dot active"></div>
-                  <div class="dot"></div>
-                  <div class="dot"></div>
-              </div>
+
           </div>
       </div>
 </template>
@@ -91,16 +82,14 @@
         height:100%;
     }
     #index .main .mask{
-        width:910px;
-        height:275px;
-        background: rgba(60,120,120,0.6);
+        width:999px;
+        height:252px;
+        background: rgba(33,77,136,0.6);
         position: absolute;
-        top:137px;
+        top:120px;
         right:0;
         padding-top: 41px;
         padding-left: 90px;
-
-
     }
     #index .main .mask .more{
         display: block;
@@ -124,13 +113,24 @@
         text-decoration: underline;
     }
     #index .main .mask .vertical{
-        width: 13px;
-        height: 52px;
+        width: 106px;
         position: absolute;
-        right:367px;
+        right:364px;
         bottom:121px;
+        transform: rotate(90deg);
     }
-
+    #index .main .mask .vertical .lineText{
+        width:100%;
+        color:#fff;
+        font-style: italic;
+        font-size: 10px;
+    }
+    #index .main .mask .vertical .line{
+        width:23px;
+        height:2px;
+        background: #46d65a;
+        margin-top:7px;
+    }
     #index .main .mask .design{
         margin-top: 28px;
         animation-delay: 1.6s;
@@ -150,14 +150,7 @@
         margin-top: 20px;
         margin-left: 8px;
     }
-    #index .main .news{
-        width:258px;
-        height:31px;
-        background: #eee;
-        position: absolute;
-        top:41px;
-        right:37px;
-    }
+
     #index .main .news .plus{
         width:19px;
         height:19px;
@@ -174,37 +167,7 @@
     #index .main .news .plus i{
         font-size: 8px;
     }
-    #index .main .news .newsText{
-        width:72px;
-        height:26px;
-        background: #01b6e2;
-        position: absolute;
-        top:3px;
-        left: 3px;
-        font-size: 12px;
-        text-align: center;
-        line-height: 26px;
-        color:#fff;
-    }
-    #index .main .bannerDot{
-        width: 193px;
-        height:1px;
-        position: absolute;
-        left:0;
-        right:0;
-        margin:0 auto;
-        bottom:44px;
-    }
-    #index .main .bannerDot .dot{
-        width: 58px;
-        height: 1px;
-        background: #fff;
-        float: left;
-        margin-left: 6px;
-    }
-    #index .main .bannerDot .dot.active{
-        background: #01a5e2;
-    }
+
     #index .main .case{
         width:227px;
         height:193px;
