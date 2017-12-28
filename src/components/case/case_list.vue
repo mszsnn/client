@@ -6,8 +6,8 @@
             </header>
             <div class="case_main">
                 <swiper :options="swiperOption">
-                    <swiper-slide v-for="item in cases">
-                    <router-link class="case_session" :to="{name:'case_detail'}">
+                    <swiper-slide v-for="item in cases" :key="item.id">
+                    <router-link class="case_session" :to="{name:'case_detail',params:{id:item.id}}">
                         <div class="case_imgbox">
                             <img src="./case_items.png" alt="">
                         </div>
@@ -54,7 +54,6 @@
         methods: {},
         mounted(){
             this.$http.get('/api/case/show').then(function(res){
-               console.log(res)
                 this.cases=res.body;
             })
         },
