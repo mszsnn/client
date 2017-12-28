@@ -149,7 +149,7 @@
     top:0;
     left:100%;
     background: #f6f6f6;
-    padding-top:114px;
+    padding-top:85px;
 
   }
 
@@ -226,10 +226,13 @@
           height:91px;
       }
       #side ul{
-          height:750px;
+          height:700px;
       }
       #side ul .navList{
           height:70px;
+      }
+      .list{
+          padding-top: 150px;
       }
   }
 
