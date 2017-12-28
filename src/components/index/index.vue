@@ -15,7 +15,7 @@
                   <div class="plus animated bounceInDown">
                       <i class="iconfont icon-iconjia "></i>
                   </div>
-                   <div class="vertical animated bounceInDown">
+                   <div class="vertical">
                        <div class="lineText">Guitar Music Studio</div>
                        <div class="line"></div>
                   </div>
