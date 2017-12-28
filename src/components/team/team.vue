@@ -130,7 +130,11 @@
               }
           },
           mounted(){
-
+              this.$http.get('/api/team/client').then(function(res){
+                  res.body.forEach(element => {
+                      console.log(element);
+                  });
+              })
           },
           components: {
               swiper,

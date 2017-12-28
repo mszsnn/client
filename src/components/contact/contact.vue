@@ -3,25 +3,31 @@
             <t :data='obj'></t>
             <div class="contact-con">
                   <div class="left">
-                        <img src="./map_03.png" width="373" height="313" alt="">
+                      <div id="allmap"></div>
                   </div>
                   <div class="right">
                         <div class="title">
-                              <div class="iconBox"></div>
+                              <div class="iconBox">
+                                    <i class="iconfont icon-tubiaozhizuomoban"></i>
+                              </div>
                               <div class="t-left">
                                     <h4>add/你可以通过这个地址找我</h4>
                                     <h5>平阳路学府街口凯通大厦2层</h5>
                               </div>
                         </div>
                         <div class="title">
-                              <div class="iconBox"></div>
+                              <div class="iconBox">
+                                    <i class="iconfont icon-phone"></i>
+                              </div>
                               <div class="t-left">
                                     <h4>tel/你可以通过这个电话联系我</h4>
                                     <h5>61440009/7856432</h5>
                               </div>
                         </div>
                         <div class="title">
-                              <div class="iconBox"></div>
+                              <div class="iconBox">
+                                    <i class="iconfont icon-youjian"></i>
+                              </div>
                               <div class="t-left">
                                     <h4>add/你可以通过这个地址找我</h4>
                                     <h5>61440009/7856432</h5>
@@ -36,6 +42,7 @@
             </div>
       </div>
 </template>
+
 <script>
     import t from '../public/title.vue'
     export default {
@@ -49,19 +56,36 @@
         }
       },
       methods:{
-
+          ready: function() {
+              // 百度地图API功能
+              var map = new BMap.Map("allmap");  // 创建Map实例
+              var point = new BMap.Point(112.560442,37.813586);
+              map.centerAndZoom(point,15);
+              var marker = new BMap.Marker(point);
+              map.addOverlay(marker);
+              map.setMapStyle({style:"grayscale"});
+          }
       },
       mounted(){
-
+          this.ready();
       },
       components: {
           t
       },
     }
+
+
+
+
 </script>
 
 <style lang="scss" scoped="">
       @import url("./animate.css");
+      @import url("http://at.alicdn.com/t/font_494814_cm4yltnkwwvr6bt9.css");
+      #allmap{
+          width:100%;
+          height:100%;
+      }
       #contact {
             width: 100%;
             height: 100%;
@@ -100,20 +124,34 @@
       .contact-con{
             width:944px;
             height:313px;
-            margin:0 auto;
+            margin:50px auto 0;
+            @media screen and (min-width:1920px){
+                width: 1310px;
+                height: 500px;
+            }
             .left{
-                  width:373px;
-                  height:313px;
+                  width: 404px;
+                  height:373px;
                   overflow: hidden;
                   float:left;
                   transform:translateX(-500px);
                   animation: bounceInLeft ease 1s .7s forwards;
+                    @media screen and (min-width:1920px){
+                        width: 555px;
+                        height: 500px;
+                    }
             }
             .right{
                   width:452px;
                   height:313px;
                   float:right;
                   color:#333;
+                box-sizing: border-box;
+                @media screen and (min-width:1920px){
+                    width:650px;
+                    height:500px;
+                    padding-top: 46px;
+                }
                   .title{
                         width:100%;
                         height:auto;
@@ -127,10 +165,11 @@
                               border-radius: 50%;
                               overflow: hidden;
                               text-align: center;
-                              line-height: 35;
+                              line-height: 35px;
                               font-size: 16px;
                               margin-right:10px;
                               border:1px solid #ccc;
+                              color:#ccc;
                         }
                         h4{
                               font-weight: 400;
@@ -154,11 +193,18 @@
                   }
                   .address{
                         margin-top:50px;
+                        width:380px;
+                        margin-left: 45px;
                         transform:translateX(1000px);
                         animation: lightSpeedIn ease 1s 1s forwards;
+                      @media screen and (min-width:1920px){
+                          width:600px;
+                      }
                         h2{
-
                               font-size: 12px;
+                            @media screen and (min-width:1920px){
+                                font-size: 18px;
+                            }
                         }
                         h3{
 
@@ -169,6 +215,9 @@
                               font-size: 12px;
                               margin-top:18px;
                               line-height: 16px;
+                            @media screen and (min-width:1920px){
+                                font-size: 16px;
+                            }
                         }
                   }
             }
