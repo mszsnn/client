@@ -91,23 +91,24 @@
     width: 203px;
     float: left;
     box-shadow: 3px 0 5px 3px rgba(0, 0, 0, 0.1);
-    padding-bottom: 117px;
     color: #878787;
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
-    padding-top: 40px;
     z-index: 100000
   }
   #side section{
     width:100%;
-    height:100%;
+    height:100vh;
     position: absolute;
     left:0;
     top:0px;
     z-index: 2;
     background: #fff;
+    padding-top: 20px;
+    padding-bottom: 78px;
+
   }
   #side .logo{
     display: block;
@@ -148,7 +149,7 @@
     top:0;
     left:100%;
     background: #f6f6f6;
-    padding-top:123px;
+    padding-top:114px;
 
   }
 
@@ -216,6 +217,19 @@
   @media screen and (min-width:1920px){
       #side{
           width:272px;
+      }
+      #side section{
+          padding-top: 75px;
+      }
+      #side .logo img{
+          width:106px;
+          height:91px;
+      }
+      #side ul{
+          height:750px;
+      }
+      #side ul .navList{
+          height:70px;
       }
   }
 

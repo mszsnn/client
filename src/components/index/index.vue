@@ -243,6 +243,7 @@
         color:#fff;
         animation-delay:1s;
     }
+
     @font-face {font-family: "iconfont";
         src: url('../../assets/iconfont/iconfont.ttf'); /* IE9*/
     }
@@ -272,5 +273,32 @@
 
     .icon-yuan-jiantou-zuo:before { content: "\e605"; }
 
-
+    @media screen and (min-width:1920px){
+        #index .main .mask{
+            width:1435px;
+            height:404px;
+            top:298px;
+        }
+        #index .main .mask span:nth-of-type(1){
+            margin-top:30px;
+        }
+        #index .main .mask .design{
+            margin-top:44px;
+        }
+        #index .main .mask .vertical{
+            right:524px;
+            bottom:278px;
+        }
+        #index .main .mask .plus{
+            top:75px;
+        }
+        #index .main .mask .more{
+            right:524px;
+            bottom:66px;
+        }
+        #index .main .case{
+            bottom:75px;
+            right:48px;
+        }
+    }
 </style>
