@@ -4,15 +4,15 @@
               <img src="./homebg_03.png" class="bgpicture">
 
               <div class="mask">
-                  <span class="animated bounceInDown">WEB DESIGN</span>
-                  <span class="animated bounceInDown">专业的企业网站建设</span>
-                  <span class="animated bounceInDown">Art is a language that loves life</span>
-                  <div class="design animated bounceInDown">
+                  <span class="">WEB DESIGN</span>
+                  <span class="">专业的企业网站建设</span>
+                  <span class="">Art is a language that loves life</span>
+                  <div class="design">
                       <img src="./design_03.png">
                       <div class="text">设计 / 建站 / 开发</div>
                   </div>
-                  <a href="" class="more animated rotateInDownRight">more</a>
-                  <div class="plus animated bounceInDown">
+                  <a href="" class="more ">more</a>
+                  <div class="plus ">
                       <i class="iconfont icon-iconjia "></i>
                   </div>
                    <div class="vertical">
@@ -20,7 +20,7 @@
                        <div class="line"></div>
                   </div>
               </div>
-              <div class="case animated wobble">
+              <div class="case ">
                   <div class="caseBox">
                       <img src="./index_list_03.png">
                   </div>
@@ -84,7 +84,7 @@
     #index .main .mask{
         width:999px;
         height:252px;
-        background: rgba(33,77,136,0.6);
+        background: rgba(33,77,136,0.9);
         position: absolute;
         top:120px;
         right:0;
