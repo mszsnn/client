@@ -4,90 +4,32 @@
             <div class="team-container" ref="teamContainer">
                   <div class="team-main">
                         <swiper :options="swiperOption">
-                              <swiper-slide>
-                                    <div v-on:click="open" class="team-session">
+                              <swiper-slide v-for="item in items" :key="item.id">
+                                    <div v-on:click="open(item)"  class="team-session">
                                           <div class="imgBox">
-                                                <img src="./岳英俊.png" alt="" width="400">
+                                                <img :src="item.pic" alt="" width="400">
                                           </div>
                                           <div class="name">
-                                                <h4>刘钊 <span>LUCY</span></h4>
-                                                <h5>实训部设计总监</h5>
+                                                <h4>{{item.name}} <span>{{item.ename}}</span></h4>
+                                                <h5>{{item.position}}</h5>
                                           </div>
                                     </div>
                               </swiper-slide>
-                              <swiper-slide>
-                                    <div v-on:click="open" class="team-session">
-                                          <div class="imgBox">
-                                                <img src="./刘钊.png" alt="" width="400">
-                                          </div>
-                                          <div class="name">
-                                                <h4>刘钊 <span>LUCY</span></h4>
-                                                <h5>实训部设计总监</h5>
-                                          </div>
-                                    </div>
-                              </swiper-slide>
-                              <swiper-slide>
-                                    <div v-on:click="open" class="team-session">
-                                          <div class="imgBox">
-                                                <img src="./马彦龙.png" alt="" width="400">
-                                          </div>
-                                          <div class="name">
-                                                <h4>刘钊 <span>LUCY</span></h4>
-                                                <h5>实训部设计总监</h5>
-                                          </div>
-                                    </div>
-                              </swiper-slide>
-                              <swiper-slide>
-                                    <div v-on:click="open" class="team-session">
-                                          <div class="imgBox">
-                                                <img src="./岳英俊.png" alt="" width="400">
-                                          </div>
-                                          <div class="name">
-                                                <h4>刘钊 <span>LUCY</span></h4>
-                                                <h5>实训部设计总监</h5>
-                                          </div>
-                                    </div>
-                              </swiper-slide>
-                              <swiper-slide>
-                                    <div v-on:click="open" class="team-session">
-                                          <div class="imgBox">
-                                                <img src="./刘钊.png" alt="" width="400">
-                                          </div>
-                                          <div class="name">
-                                                <h4>刘钊 <span>LUCY</span></h4>
-                                                <h5>实训部设计总监</h5>
-                                          </div>
-                                    </div>
-                              </swiper-slide>
-                              <swiper-slide>
-                                    <div v-on:click="open" class="team-session">
-                                          <div class="imgBox">
-                                                <img src="./马彦龙.png" alt="" width="400">
-                                          </div>
-                                          <div class="name">
-                                                <h4>刘钊 <span>LUCY</span></h4>
-                                                <h5>实训部设计总监</h5>
-                                          </div>
-                                    </div>
-                              </swiper-slide>
-
                         </swiper>
                   </div>
             </div>
             <div id="team-person" ref="teamPerson">
                   <div class="left">
-                        <img src="./刘钊.png" alt="" width="388">
+                        <img :src="activedata.pic" alt="" width="388">
                   </div>
                   <div class="right">
                         <div class="name">
-                              <h4>刘钊 <span>LUCY</span></h4>
-                              <h5>实训部设计总监</h5>
+                              <h4>{{activedata.name}} <span>{{activedata.ename}}</span></h4>
+                              <h5>{{activedata.position}}</h5>
                         </div>
                         <div class="line"></div>
                         <div class="con">
-                              <p>末那工作室是中國大陸地區第壹家以原創高端GK模型及雕像開發生產的專業工作室。末那工作室,組建於2010年，成立初期主要從事原創</p>
-                              <p>末那工作室是中國大陸地區第壹家以原創高端GK模型及雕像開發生產的專業工作室。末那工作室,組建於2010年，成立初期主要從事原創</p>
-                              <p>末那工作室是中國大陸地區第壹家以原創高端GK模型及雕像開發生產的專業工作室。末那工作室,組建於2010年，成立初期主要從事原創</p>
+                              {{activedata.content}}
                         </div>
                   </div>
                   <div class="close" v-on:click="close" ref="teamClose">×</div>
@@ -104,23 +46,33 @@
               return {
                   swiperOption: {
                       slidesPerView: 3,
-                      spaceBetween : 17,
-//                      freeMode: true,
+                      spaceBetween :25,
                       centeredSlides : true,
                       initialSlide: 1,
+                      breakpoints: {
+                          1367: {
+                              slidesPerView: 3,
+                              spaceBetween: 38,
+                              centeredSlides : true,
+                              initialSlide: 1,
+                          }
+                      }
                   },
                   obj:{
                       h1:'Team Introduction',
                       h2:'团队展示'
-                  }
+                  },
+                  items:[],
+                  activedata:{}
               }
           },
           methods:{
-              open:function(){
+              open:function(obj){
                   var top = document.getElementsByClassName("top")[0];
                   this.$refs.teamContainer.style.display = "none";
                   this.$refs.teamPerson.style.display = "block";
                   top.style.opacity="0";
+                  this.activedata=obj;
               },
               close:function(){
                   var top = document.getElementsByClassName("top")[0];
@@ -130,10 +82,9 @@
               }
           },
           mounted(){
-              this.$http.get('/api/team/client').then(function(res){
-                  res.body.forEach(element => {
-                      console.log(element);
-                  });
+              this.$http.get('/api/team/show').then(function(res){
+                  this.items = res.body;
+                  console.dir(this.items);
               })
           },
           components: {
@@ -145,39 +96,39 @@
 
 </script>
 <style lang="" scoped="">
+      @import "./animate.css";
     #team{
         width:100%;
         height:100%;
-        overflow: auto;
+        overflow: hidden;
         padding-top: 50px;
         box-sizing: border-box;
+          position:relative;
+          top:0;
+          left:0;
     }
-    .team-container{
-        width:100%;
-        position:relative;
-        top:0;
-        left:0;
-        overflow: hidden;
-    }
-    .team-container .team-main{
-        width:auto;
-        height:480px;
-    }
-
+      .swiper-container{
+            width: 100%;
+            height:100%;
+            overflow: hidden;
+            
+      }
     .swiper-container .swiper-wrapper .swiper-slide{
         width:367px!important;
         height:370px;
         overflow: hidden;
         transition:all .5s;
-        transform: translateY(25px);
+        margin-top:25px;
+          transform:translateY(1000px);
+          animation: slideInUp 0.7s 0.3s forwards;
     }
     .swiper-container .swiper-wrapper .swiper-slide .imgBox{
         height:370px;
         overflow: hidden;
         transition:all .5s;
-        position:relative;
-        top:0;
-        left:0;
+          position:relative;
+          top:0;
+          left:0;
     }
     .swiper-container .swiper-wrapper .swiper-slide .imgBox img{
         height:auto;
@@ -197,7 +148,8 @@
     }
     .swiper-container .swiper-wrapper .swiper-slide-active{
         height:480px;
-        transform: translateY(0px);
+        margin-top:0;
+          animation: slideInUp 0.7s forwards 0s;
     }
     .swiper-container .swiper-wrapper .swiper-slide-active .imgBox{
         height:416px;
@@ -209,7 +161,7 @@
     .team-container .team-main .team-session{
         width:100%;
         height:100%;
-        transition:all .5s;
+        /*transition:all .5s;*/
         overflow: hidden;
         margin:0 auto;
     }
