@@ -1,7 +1,7 @@
 <template>
       <div id="index">
          <div class="main">
-              <img src="./homebg_03.png" class="bgpicture">
+              <!--<img src="./homebg_03.png" class="bgpicture">-->
 
               <div class="mask">
                   <span class="">WEB DESIGN</span>
