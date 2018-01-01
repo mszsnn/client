@@ -56,17 +56,19 @@
     height:100%;
   }
   #services .services_content{
-    width: 595px;
+    width: 536px;
     margin: 0 auto;
-    padding-top: 84px
+    padding-top: 50px;
+    @media screen and (min-width:1367px){
+       width:836px;
+       padding-top: 100px;
+    }
   }
 
   #services .services_spot{
     width: 100%;
     height: auto;
-    overflow: hidden;
-    
-    
+    overflow: hidden;  
   }
   @keyframes run3 {
     0%{
@@ -86,11 +88,15 @@
     flex-wrap: wrap;
   }
   #services ul li{
-    width: 148px;
+    width: 134px;
     height: auto;
-    margin-right: 75px;
+    margin-right: 67px;
     margin-bottom: 8px;
     opacity: 0;
+    @media screen and (min-width:1367px){
+      width: 236px;
+      margin-right: 60px;
+    }
   }
   #services ul li:first-child{
       animation: fadeInUp 0.4s 1s forwards;
@@ -120,13 +126,17 @@
     margin-right: 0;
   }
   #services .services_logo{
-    width: 148px;
-    height: 148px;
+    width: 134px;
+    height: 134px;
     border: 3px solid #eeeeee;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
+    @media screen and (min-width:1367px){
+      width: 236px;
+      height: 236px;
+    }
   }
   #services .services_logo img{
      width: 70px;
@@ -137,7 +147,7 @@
     transform: scale(1.1);
   }
   #services .services_spot h2{
-    font-size: 14px;
+    font-size: 16px;
     color: #585858;
     text-align: center;
     margin-top: 10px;

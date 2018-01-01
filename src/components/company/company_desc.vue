@@ -4,9 +4,7 @@
               <!-- 标题 -->
               <t :data='obj'></t>
               <!-- 公司图片 -->
-              <a href="" class="companyIntro_img">
-                  <img src="./companyIntro_img.png" alt="">
-              </a>
+              <a href="" class="companyIntro_img"></a> 
               <!-- 公司介绍文本 -->
               <div class="companyIntro_text">
                 <p>
@@ -53,60 +51,51 @@
     }
 </script>
 <style lang="scss" scoped="">
-  @import "./animate.css";
+@import "./animate.css";
 #company_desc{
   width:100%;
   height:100%;
 }
 #company_desc .companyIntro_content{
-  width: 538px;
+  width: 663px;
   margin: 0 auto;
-  padding-top: 84px
+  padding-top: 50px;
+  @media screen and (min-width:1367px){
+    width:754px;
+    padding-top: 100px;
+  }
 }
 
 /* 公司图片 */
 #company_desc .companyIntro_img{
   display: block;
-  width: 538px;
-  height: 177px;
-  /* background: red; */
-  margin: 11px auto 0;
-
-}
-#company_desc .companyIntro_img img{
-  width: 100%;
-  height: 100%;
-  display: block;
-  opacity: 0;
-  animation-name:opc,fadeInUp ;
-  animation-duration: 1s,1s;
-  animation-delay: 0.9s,0.9s;
-  animation-fill-mode:forwards,forwards;
-}
-@keyframes opc {
-  from{
-    opacity: 0;
+  width: 663px;
+  height: 155px;
+  background: url("1366companyIntro_img.png") no-repeat center;
+  @media screen and (min-width:1367px){
+    width:754px;
+    height: 246px;
+    background: url("1920companyIntro_img.png") no-repeat center;
   }
-  to{
-    opacity: 1;
-  }
+  margin: 0px auto 20px;
+  transform: translateY(1000px);
+  animation:flipInX ease 1s 0.7s forwards;
+  overflow:hidden;
 }
 /*  公司介绍文本*/
 #company_desc .companyIntro_text{
   width: 100%;
   height: auto;
-  font-size: 10px;
+  font-size: 12px;
   color: #4c4c4c;
-  line-height: 16px;
-  margin-top: 16px;
-  opacity: 0;
-  animation-name:opc,fadeInUp ;
-  animation-duration: 1s,1s;
-  animation-delay: 1.1s,1.1s;
-  animation-fill-mode:forwards,forwards;
+  line-height: 20px;
+  transform: translateY(1000px);
+  animation:flipInX ease 1s 0.7s forwards;
+  overflow:hidden;
 }
 #company_desc .companyIntro_text p{
-  margin-bottom: 8px;
-
+  margin-bottom:10px;
+  text-indent:2em;
 }
+
 </style>
