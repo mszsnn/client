@@ -740,6 +740,7 @@
     body,html{
         height:100%;
     }
+
     #index{
         width:100%;
         height: 100%;
@@ -748,6 +749,21 @@
         width:100%;
         height: 100%;
     }
+    #glFullscreen {
+		width: 100%;
+		height: 100vh;
+		min-width: 640px;
+		min-height: 360px;
+		position: relative;
+		overflow: hidden;
+		z-index: -30;
+	}
+	#example {
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
     #index .main .bgpicture{
         display: block;
         width:100%;
