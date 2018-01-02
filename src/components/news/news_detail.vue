@@ -5,7 +5,7 @@
                   <header>
                     <h1 class="title">{{news.title}}</h1>
                     <h5 class="sub_title">{{news.engtitle}}</h5>
-                    <ul class="paratext">
+                    <ul class="paratext paratext_big">
                       <li>
                         <span></span>
                         <i>{{news.time}}</i>
@@ -14,13 +14,30 @@
                         <span></span>
                         <i>{{news.count}}</i>
                       </li>
+                      <li>
+                        <span></span>
+                        <i>{{news.count}}</i>
+                      </li>
+                    </ul>
+                    <ul class="paratext paratext_small">
+                      <li>
+                        <i class="iconfont icon-rili icon_data"></i>
+                        <i>{{news.time}}</i>
+                      </li>
+                      <li>
+                        <i class="iconfont icon-chakan icon_view"></i>
+                        <i>{{news.count}}</i>
+                      </li>
                     </ul>
                   </header>
-                  <section v-html="news.content">
+                  <section v-html="news.content" class="news_content">
                        
                   </section>
               </main>
               <router-link class="button" :to="{name:'news_list'}"><img src="./button.png"></router-link>
+              <div class="news_roll">
+                <div class="news_roll_active"></div>
+              </div>
           </div>
       </div>
 </template>
@@ -47,32 +64,36 @@
     }
 </script>
 <style scoped="">
-  #news_detail{
+  @import url("http://at.alicdn.com/t/font_525619_m9zkoywfy6fajor.css");
+  #news_detail,.news_detail_container{
     width: 100%;
     height: 100%;
-    overflow-y: scroll;
+    position:absolute;
+    left:0;
+    top:0;
   }
-   .news_detail_container{
-      height: 100%;
-      margin:0 auto;
-      position: relative;
-    }
     .news_detail_container main{
-      width: 930px;
+      width: 873px;
       height:auto;
-      margin:98px auto 0;
+      margin:102px auto 0;
       overflow: hidden;
     }
     .news_detail_container .title{
-      font-size: 28px;
+      font-size: 23px;
       color:#01a5e2;
     }
     .news_detail_container .sub_title{
-      font-size:18px;
+      font-size:15px;
       color:#878787;
     }
    .paratext{
      overflow: hidden;
+   }
+   .paratext_big{
+    display:none;
+   }
+   .paratext_small{
+    display:block;
    }
     .paratext li{
       float: left;
@@ -82,8 +103,8 @@
       text-indent: 14px;
     }
    .paratext span{
-     width: 8px;
-     height: 8px;
+     width: 11px;
+     height: 11px;
      border-radius: 50%;
      float: left;
      position: absolute;
@@ -91,6 +112,12 @@
      bottom: 0;
      left: 0;
      margin:auto;
+   }
+   .icon_data{
+      color:#32D897!important;
+   }
+   .icon_view{
+      color:#1F9AF3!important;
    }
     .paratext li:nth-child(1) span{
       background-color: #31d897;
@@ -107,16 +134,67 @@
       float: left;
       font-style: normal;
     }
-    .news_detail_container section{
+    .news_content{
       width: 100%;
-      margin-top: 47px;
+      height:360px;
+      margin-top: 68px;
+      font-size:14px;
     }
     .news_detail_container .button{
       width: 22px;
       height: 22px;
       position: absolute;
-      top:67px;
-      right:62px;
+      top:93px;
+      right:86px;
       cursor: pointer;
+      display:none;
+    }
+    .news_roll{
+      width:2px;
+      height:337px;
+      position: absolute;
+      top:182px;
+      right:97px;
+      cursor: pointer;
+      background:#E5E5E5;
+      display:block;
+    }
+    .news_roll_active{
+      position: absolute;
+      top:0;
+      left:-2px;
+      width:6px;
+      height:135px;
+      background:#19B3EC;
+    }
+    @media screen and (min-width:19920px){
+      .news_detail_container main{
+        width: 1308px;
+      }
+      .news_detail_container main{
+        margin:138px auto 0;
+      }
+      .news_detail_container .title{
+        font-size: 28px;
+      }
+      .news_detail_container .sub_title{
+        font-size:18px;
+      }
+      .paratext_big{
+        display:block;
+      }
+      .paratext_small{
+        display:small;
+      }
+      .news_roll{
+        display:none;
+      }
+      .button{
+        display:block;
+      }
+      .news_content{
+        height:701px;
+        overflow-y: scroll;
+      }
     }
 </style>
