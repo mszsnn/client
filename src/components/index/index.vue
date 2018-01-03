@@ -772,7 +772,7 @@
     #index .main .mask{
         width:999px;
         height:252px;
-        background: rgba(33,77,136,0.9);
+        background: rgba(33,77,136,0.5);
         position: absolute;
         top:120px;
         right:0;

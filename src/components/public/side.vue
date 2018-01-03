@@ -113,7 +113,7 @@
   #side .logo{
     display: block;
     width: 100%;
-    padding:26px 0;
+    padding:15px 0;
     overflow: hidden;
   }
 
@@ -149,7 +149,7 @@
     top:0;
     left:100%;
     background: #f6f6f6;
-    padding-top:85px;
+    padding-top:120px;
 
   }
 
