@@ -30,18 +30,17 @@
                       </li>
                     </ul>
                   </header>
-                  <section v-html="news.content" class="news_content">
-                       
-                  </section>
+                  <div id='news_scroll'>
+                    <div v-html="news.content"></div>
+                  </div>
               </main>
               <router-link class="button" :to="{name:'news_list'}"><img src="./button.png"></router-link>
-              <div class="news_roll">
-                <div class="news_roll_active"></div>
-              </div>
+              
           </div>
       </div>
 </template>
 <script>
+
     import side from "../public/side.vue";
     export default {
       name:'news_detail',
@@ -49,6 +48,8 @@
         return {
             news:{}
         }
+      },
+      methods:{
       },
       mounted(){
           let id=this.$route.query.id;
@@ -60,7 +61,8 @@
           });
           this.news=res.body[0];
        }) 
-      }
+      },
+
     }
 </script>
 <style scoped="">
@@ -73,7 +75,7 @@
     top:0;
   }
     .news_detail_container main{
-      width: 873px;
+      width: 942px;
       height:auto;
       margin:102px auto 0;
       overflow: hidden;
@@ -134,12 +136,36 @@
       float: left;
       font-style: normal;
     }
-    .news_content{
+    #news_scroll{
       width: 100%;
       height:360px;
       margin-top: 68px;
       font-size:14px;
+      overflow:auto;
+      box-sizing:border-box;
+      padding-right:68px;
     }
+    #news_scroll div{
+      width:100%;
+      height:auto;
+    }
+     #news_scroll::-webkit-scrollbar {
+        width:2px;
+        height:337px;
+        cursor: pointer;
+        background:#E5E5E5;
+      }
+      #news_scroll::-webkit-scrollbar-button    {
+          display: none;
+      }
+      #news_scroll::-webkit-scrollbar-track     {
+          background:#ccc;
+      }
+      #news_scroll::-webkit-scrollbar-thumb{
+       width:6px;
+       height:135px;
+       background:#19B3EC;
+      }
     .news_detail_container .button{
       width: 22px;
       height: 22px;
@@ -148,24 +174,6 @@
       right:86px;
       cursor: pointer;
       display:none;
-    }
-    .news_roll{
-      width:2px;
-      height:337px;
-      position: absolute;
-      top:182px;
-      right:97px;
-      cursor: pointer;
-      background:#E5E5E5;
-      display:block;
-    }
-    .news_roll_active{
-      position: absolute;
-      top:0;
-      left:-2px;
-      width:6px;
-      height:135px;
-      background:#19B3EC;
     }
     @media screen and (min-width:19920px){
       .news_detail_container main{
