@@ -226,13 +226,15 @@
           height:91px;
       }
       #side ul{
-          height:700px;
+          height: 725px;
+          padding-top: 32px;
       }
+
       #side ul .navList{
           height:70px;
       }
       .list{
-          padding-top: 150px;
+          padding-top: 162px;
       }
   }
 
