@@ -65,7 +65,7 @@
 
 		this.scene = null;
 		this.cameraDefaults = {
-			posCamera: new THREE.Vector3( 1300.0, 1300.0, 1300.0 ),
+			posCamera: new THREE.Vector3( 800.0, 800.0, 800.0 ),
 			posCameraTarget: new THREE.Vector3( 0, 0, 0 ),
 			near: 0.1,
 			far: 10000,
@@ -772,7 +772,7 @@
     #index .main .mask{
         width:999px;
         height:252px;
-        background: rgba(33,77,136,0.9);
+        background: rgba(33,77,136,0.4);
         position: absolute;
         top:120px;
         right:0;
