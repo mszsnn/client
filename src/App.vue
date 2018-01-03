@@ -4,8 +4,8 @@
     <div class='ms_con'>
       <transition name='move'>
         <router-view/>
-      </transition>  
-    </div>  
+      </transition>
+    </div>
   </div>
 </template>
 
@@ -27,12 +27,18 @@ export default {
   font-family: 微软雅黑;
 }
 #app {
-  padding-left: 190px;
   width: 100%;
   height: 100vh;
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
+  padding-left: 203px;
+}
+
+@media screen and (min-width: 1367px){
+  #app {
+    padding-left:272px;
+  }
 }
 @font-face {
   font-family: "cg";
@@ -49,7 +55,7 @@ export default {
 
 .move-enter-active,
 .move-leave-active {
-  transition: transform 0.6s cubic-bezier(0.86, 0, 0.07, 1), 
+  transition: transform 0.6s cubic-bezier(0.86, 0, 0.07, 1),
     opacity 0.6s cubic-bezier(0.86, 0, 0.07, 1);
 }
 .move-enter {
@@ -65,6 +71,7 @@ export default {
   height: 100%;
   position: relative;
 }
+
 .ms_con > div[id] {
   position: absolute;
   left: 0;

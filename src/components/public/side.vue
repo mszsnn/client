@@ -9,9 +9,9 @@
             <a :href="item.route" :class="{active:current==index}" @click="c(item)">
               <span>{{item.title}}</span>
               <span>{{item.eng}}</span>
-            </a> 
+            </a>
           </li>
-        </ul>   
+        </ul>
 
      </section>
      <transition name="tran">
@@ -52,7 +52,7 @@
       c(item){
           this.current=item.id;
           this.children=item.children;
-         
+
       }
     },
     watch:{
@@ -60,7 +60,7 @@
           this.category[1].route=this.children[this.currentchilren].route;
       }
     }
-   
+
   }
 </script>
 <style lang="scss" scoped="">
@@ -86,6 +86,7 @@
   .tran-enter,.tran-leave-to {
     transform: translate3d(-100%,0,0);
   }
+
 
   #side {
     width: 203px;
@@ -165,6 +166,7 @@
     width: 100%;
     height: 100%;
     color: #7b7b7b;
+    transition: all 1s;
   }
   .list div.active {
     background: #01a5e2;
@@ -181,6 +183,7 @@
     color: #7d7d7d;
     /*text-align: center;*/
     padding-left: 71px;
+    transition: color 1s;
   }
 
   #side ul .navList a span:nth-of-type(1) {
