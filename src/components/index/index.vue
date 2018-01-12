@@ -46,6 +46,8 @@
       },
       mounted(){
 
+  var lon = 90,lat = 0, 
+  phi = 0, theta = 0;
 
   var WWOBJLoader2Example = (function () {
 
@@ -671,6 +673,39 @@
 
 	// kick render loop
 	render();
+    
+	animate();
+
+	function animate() {
+
+		requestAnimationFrame( animate );
+		update();
+
+	}
+
+	function update() {
+
+		lon += 0.3;
+
+		lat = Math.max( - 85, Math.min( 85, lat ) );
+		phi = THREE.Math.degToRad( 90 - lat );
+		theta = THREE.Math.degToRad( lon );
+
+		app.cameraTarget.x = 500 * Math.sin( phi ) * Math.cos( theta );
+		app.cameraTarget.y = 500 * Math.cos( phi );
+		app.cameraTarget.z = 500 * Math.sin( phi ) * Math.sin( theta );
+
+		app.camera.lookAt( app.cameraTarget );
+
+		app.renderer.render( app.scene, app.camera );
+
+	}
+
+
+
+
+
+
 
 
 	// 加载传送带
@@ -754,7 +789,6 @@
 		min-height: 360px;
 		position: relative;
 		overflow: hidden;
-		z-index: -30;
 	}
 	#example {
 		width: 100%;
