@@ -59,7 +59,7 @@
 
 		this.scene = null;
 		this.cameraDefaults = {
-			posCamera: new THREE.Vector3( 800.0, 800.0, 800.0 ),
+			posCamera: new THREE.Vector3( 900.0, 500.0, 1100.0 ),
 			posCameraTarget: new THREE.Vector3( 0, 0, 0 ),
 			near: 0.1,
 			far: 10000,
@@ -91,15 +91,19 @@
 		this.resetCamera();
 		this.controls = new THREE.TrackballControls( this.camera, this.renderer.domElement );
 
-		var ambientLight = new THREE.AmbientLight( 0xeed3c9 );
-		var directionalLight1 = new THREE.DirectionalLight( 0xFECF82 );
-		var directionalLight2 = new THREE.DirectionalLight( 0xFECF82 );
-
-		directionalLight1.position.set( -100, -50, 100 );
-		directionalLight2.position.set( 100, 50, -100 );
-
+		var ambientLight = new THREE.AmbientLight( 0xeed3c9);
+        var directionalLight1 = new THREE.SpotLight( 0xFECF82);
+        directionalLight1.position.set( -2000, 2000, 2000 );
+        directionalLight1.angle = Math.PI / 5;
+		directionalLight1.penumbra = 0.3;
+		directionalLight1.castShadow = true;
+		directionalLight1.shadow.camera.near = 8;
+		directionalLight1.shadow.camera.far = 30;
+		directionalLight1.shadow.mapSize.width = 1024;
+		directionalLight1.shadow.mapSize.height = 1024;
+		directionalLight1.shadowDarkness = 0.5;
+		directionalLight1.shadowCameraVisible = true;
 		this.scene.add( directionalLight1 );
-		this.scene.add( directionalLight2 );
 		this.scene.add( ambientLight );
 
 		// 网格部分
