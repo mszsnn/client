@@ -9,18 +9,12 @@
                   <span class="">WEB DESIGN</span>
                   <span class="">专业的企业网站建设</span>
                   <span class="">Art is a language that loves life</span>
-                  <div class="design">
-                      <img src="./design_03.png">
-                      <div class="text">设计 / 建站 / 开发</div>
-                  </div>
-                  <a href="" class="more ">more</a>
+                  
+                  
                   <div class="plus ">
                       <i class="iconfont icon-iconjia "></i>
                   </div>
-                   <div class="vertical">
-                       <div class="lineText">Guitar Music Studio</div>
-                       <div class="line"></div>
-                  </div>
+                  
               </div>
               <div class="case ">
                   <div class="caseBox">
@@ -89,7 +83,7 @@
 			antialias: true,
 			autoClear: true
 		} );
-		this.renderer.setClearColor( 0xE1BB95 );
+		this.renderer.setClearColor( 0xffffff );
 
 		this.scene = new THREE.Scene();
 
@@ -97,7 +91,7 @@
 		this.resetCamera();
 		this.controls = new THREE.TrackballControls( this.camera, this.renderer.domElement );
 
-		var ambientLight = new THREE.AmbientLight( 0xB2905F );
+		var ambientLight = new THREE.AmbientLight( 0xeed3c9 );
 		var directionalLight1 = new THREE.DirectionalLight( 0xFECF82 );
 		var directionalLight2 = new THREE.DirectionalLight( 0xFECF82 );
 
@@ -770,18 +764,15 @@
         height:100%;
     }
     #index .main .mask{
-        width:999px;
-        height:252px;
-<<<<<<< HEAD
+        width:304px;
+        height:106px;
+
         background: rgba(33,77,136,0.5);
-=======
-        background: rgba(33,77,136,0.4);
->>>>>>> 03e8a97fc9d2236da20faa6a3515509875b976d7
         position: absolute;
-        top:120px;
-        right:0;
-        padding-top: 41px;
-        padding-left: 90px;
+        top:43px;
+        right:73px;
+        padding-top: 23px;
+        padding-left: 31px;
     }
     #index .main .mask .more{
         display: block;
@@ -911,20 +902,20 @@
         color:#fff;
     }
     #index .main .mask span:nth-of-type(1){
-        font-size: 64px;
+        font-size: 36px;
         font-weight: 800;
         font-style: italic;
         animation-delay: 1s;
 
     }
     #index .main .mask span:nth-of-type(2){
-        font-size: 40px;
+        font-size: 22px;
         font-family: "宋体";
         animation-delay: 1.2s;
     }
     #index .main .mask span:nth-of-type(3){
-        font-size: 11px;
-        letter-spacing: 10px;
+        font-size: 4px;
+        letter-spacing: 3px;
         font-style: italic;
         animation-delay: 1.4s;
     }
@@ -967,12 +958,21 @@
 
     @media screen and (min-width:1920px){
         #index .main .mask{
-            width:1435px;
-            height:404px;
-            top:298px;
+            width:476px;
+            height:166px;
+            top:43px;
+			right:54px;
+			padding-top: 18px;
+            padding-left: 49px;
         }
         #index .main .mask span:nth-of-type(1){
-            margin-top:30px;
+            font-size:43px;
+        }
+		#index .main .mask span:nth-of-type(2){
+            font-size:34px;
+        }
+		#index .main .mask span:nth-of-type(3){
+            font-size:7px;
         }
         #index .main .mask .design{
             margin-top:44px;
